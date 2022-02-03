@@ -1,5 +1,5 @@
 # CSI3140 Project Winter 2022
-## Name TBD
+## ITEMZ
 
 ## Student Information
 - Rocio Ferreiro Rico - 300271563
