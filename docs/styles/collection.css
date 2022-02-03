@@ -1,0 +1,6 @@
+.collection{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,20%);
+    padding: 50px;
+    box-shadow: inset 0px 7px 10px -3px var(--light-secondary);
+}
