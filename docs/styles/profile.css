@@ -4,6 +4,7 @@
     height: 250px;
     flex-direction: column;
     align-items: center;
+    color: var(--text);
 }
 
 .profile-header .cover{
@@ -17,3 +18,9 @@
     width: 130px;
     margin-top: -70px;
 }
+
+.sub-username{
+    margin-top: 0;
+    color: var(--dark-secondary);
+}
+

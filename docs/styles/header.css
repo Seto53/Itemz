@@ -5,7 +5,7 @@ body {
 
 header {
     width: 100%;
-    background-color: #e3e3e3;
+    background-color: var(--light-secondary);
     height: 70px;
 }
 
@@ -27,7 +27,7 @@ header .header-options{
 
 header .header-options a {
     text-decoration: none;
-    color: #010101;
+    color: var(--text);
 }
 
 header .tiny-profile-p {
@@ -40,7 +40,7 @@ header .logo-image{
 }
 
 header .exit-icon{
-    color: #9f9f9f;
+    color: var(--dark-secondary);
     font-size: 30px;
 }
 
