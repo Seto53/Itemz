@@ -49,7 +49,6 @@ header .search-3 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    overflow: visible;
     width: 60%;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
@@ -58,30 +57,26 @@ header .search-3 {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
     grid-auto-columns: 1fr;
     -ms-grid-columns: 1fr 1fr;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto auto;
-    grid-template-rows:auto auto;
+    grid-template-rows: auto auto;
     font-size: 15px;
-    text-align: left;
-    align-items: center;
 }
 
-header .navigation-container {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+.navigation-container {
+    width: 100%;
     margin-right: auto;
-    margin-left:0;
-    -webkit-box-pack: justify;
+    margin-left: 0;
     -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
     justify-content: space-between
+}
+
+.w-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px
 }
 
 .w-container:after, .w-container:before {
@@ -91,6 +86,10 @@ header .navigation-container {
     grid-row-start: 1;
     grid-column-end: 2;
     grid-row-end: 2
+}
+
+.w-container:after {
+    clear: both
 }
 
 .search-input-2 {
@@ -109,16 +108,21 @@ header .navigation-container {
     border: none;
 }
 
+input.w-button {
+    -webkit-appearance: button
+}
+
 .w-input {
     display: block;
+    width: 100%;
     height: 38px;
     padding: 8px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
     vertical-align: middle;
-    background-color: #ececec;
-    border: 1px solid #ccc;
+    background-color: var(--light-secondary);
+    border: 1px solid #ccc
 }
 
 .w-input:-moz-placeholder {
@@ -139,9 +143,10 @@ header .navigation-container {
 }
 
 .w-input:focus {
-    border-color: var(--main-color);
+    border-color: #3898ec;
     outline: 0
 }
+
 
 .w-button {
     display: inline-block;
@@ -153,6 +158,19 @@ header .navigation-container {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+input {
+    line-height: normal;
+    font: inherit;
+}
+
+input[type=search] {
+    -webkit-appearance: none
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
 }
 
 
