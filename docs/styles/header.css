@@ -44,5 +44,118 @@ header .exit-icon{
     font-size: 30px;
 }
 
+header .search-3 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: visible;
+    width: 60%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns:1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows:auto auto;
+    font-size: 15px;
+    text-align: left;
+    align-items: center;
+}
+
+header .navigation-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left:0;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.w-container:after, .w-container:before {
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2
+}
+
+.search-input-2 {
+    margin: 0 30px;
+    border-radius: 7px;
+    font-size: 15px;
+    border: none;
+    width: 450px;
+}
+
+.search-button-2 {
+    margin-left: 9px;
+    border-radius: 7px;
+    -o-object-fit: fill;
+    object-fit: fill;
+    border: none;
+}
+
+.w-input {
+    display: block;
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    vertical-align: middle;
+    background-color: #ececec;
+    border: 1px solid #ccc;
+}
+
+.w-input:-moz-placeholder {
+    color: #999
+}
+
+.w-input::-moz-placeholder {
+    color: #999;
+    opacity: 1
+}
+
+.w-input:-ms-input-placeholder {
+    color: #999
+}
+
+.w-input::-webkit-input-placeholder {
+    color: #999
+}
+
+.w-input:focus {
+    border-color: var(--main-color);
+    outline: 0
+}
+
+.w-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: var(--main-color);
+    color: #fff;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
 
 
