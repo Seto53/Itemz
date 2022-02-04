@@ -25,7 +25,7 @@
         </div>
         <div class="header-options">
             <a href="index.html"> Home </a>
-            <a href="resources.html"> Resources </a>
+            <a href="settings.html"> Settings </a>
             <a href="profile.html"> <img alt="profile" class="tiny-profile-p" src="assets/profile_picture.png"> </a>
             <i class="fas fa-sign-out-alt exit-icon"></i>
         </div>
@@ -55,10 +55,10 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = days
-            document.getElementById("hours").innerText = hours
-            document.getElementById("minutes").innerText = minutes
-            document.getElementById("seconds").innerText = seconds
+            document.getElementById("days").innerText = days.toString()
+            document.getElementById("hours").innerText = hours.toString()
+            document.getElementById("minutes").innerText = minutes.toString()
+            document.getElementById("seconds").innerText = seconds.toString()
 
             if (distance < 0) {
                 clearInterval(x);
