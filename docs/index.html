@@ -2,45 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link href="styles/home.css" rel="stylesheet" type="text/css"/>
-    <link href="styles/header.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="styles/root.css">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/element.css" rel="stylesheet">
+    <link href="styles/root.css" rel="stylesheet">
+    <link href="styles/collection.css" rel="stylesheet">
+    <link href="styles/profile.css" rel="stylesheet">
+    <link href="styles/countdown.css" rel="stylesheet">
+    <link href="styles/drop.css" rel="stylesheet">
     <title>ItemZ</title>
 </head>
 <body>
-<div class="navbar w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease"
-     data-easing2="ease" data-w-id="33c883c6-4afc-cc73-3bca-d2857a9d4bc2" id="Navigation" role="banner">
-    <div class="navigation-container">
-        <div class="navigation-left"><a aria-current="page" class="w-nav-brand w--current"
-                                        href="index.html"><img
-                alt=""
-                sizes="(max-width: 479px) 100vw, (max-width: 767px) 15vw, (max-width: 991px) 11vw, 8vw"
-                src="assets/logo_with_name.png"
-                width="125"/></a></div>
-        <div class="navigation-container w-container">
-            <form action="" class="search-3 w-form"><label for="search"></label><input class="search-input-2 w-input"
-                                                                                       id="search"
-                                                                                       maxlength="256" name="query"
-                                                                                       placeholder="Search items and drops"
-                                                                                       required=""
-                                                                                       type="search"/><input
-                    class="search-button-2 w-button" type="submit" value="Search"/></form>
-        </div>
-        <div class="navigation-right">
-            <nav class="nav-menu w-nav-menu" role="navigation"><a aria-current="page"
-                                                                  class="nav-button w-nav-link w--current"
-                                                                  href="index.html">Home</a><a
-                    aria-current="page" class="nav-button w-nav-link w--current"
-                    href="index.html">Settings<br/>‍</a><img
-                    alt=""
-                    loading="lazy"
-                    src="assets/person_black_24dp.svg"
-                    width="67"/></nav>
-            <div class="menu-button w-nav-button">
-                <div class="icon w-icon-nav-menu"></div>
-            </div>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/1521e42fd4.js"></script>
+<header>
+    <div class="header-class">
+        <img alt="logo" class="logo-image" src="assets/logo_with_name.png">
+        <div class="header-options">
+            <a href="index.html"> Home </a>
+            <a href="resources.html"> Resources </a>
+            <a href="profile.html"> <img alt="profile" class="tiny-profile-p" src="assets/profile_picture.png"> </a>
+            <i class="fas fa-sign-out-alt exit-icon"></i>
         </div>
     </div>
+</header>
+
+<div class="profile-header">
+    <img alt="cover" class="cover" src="assets/cover.png">
 </div>
+
+<div class="container">
+    <div class="drop">
+        <a href="drop.html"> <img alt="Collectible Name" class="drop" src="assets/element.png"></a>
+    </div>
+    <script>
+        //code from https://www.w3schools.com/howto/howto_js_countdown.asp
+        var countDownDate = new Date("Feb 5, 2022 20:46:25").getTime();
+
+        var x = setInterval(function () {
+
+            var now = new Date().getTime();
+
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days
+            document.getElementById("hours").innerText = hours
+            document.getElementById("minutes").innerText = minutes
+            document.getElementById("seconds").innerText = seconds
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("headline").innerHTML = "DROP LIVE";
+            }
+        }, 1000);</script>
+    <h1 id="headline">Drops In</h1>
+    <div id="countdown">
+        <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+        </ul>
+    </div>
+</div>
+
 </body>
 </html>
