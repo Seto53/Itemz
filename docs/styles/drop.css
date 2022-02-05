@@ -1,25 +1,12 @@
 .drop {
     border-radius: 20px;
     margin-bottom: 1%;
+}
+
+.container-countdown .drop {
     transition: transform .5s;
 }
 
-img.drop:hover {
+.container-countdown img.drop:hover {
     transform: scale(1.05);
 }
-
-.home-header{
-    width: 100%;
-    display: flex;
-    height: 166px;
-    flex-direction: column;
-    align-items: center;
-    color: var(--text);
-}
-
-.home-header .cover{
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-}
-

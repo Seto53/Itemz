@@ -49,6 +49,7 @@ Scope Extension Idea: Ban a user, increase user coins.
 fandom.
 - PostgreSQL will be used as a database. The database will collect information about the
 users, drops and collectibles.
+- The Bootstrap framework will be used for some frontend elements.
 
 The pdf version of this project outline can be found [HERE](https://github.com/professor-forward/project-messiteam/blob/develop/projectOutline/Project%20Outline.pdf)
 

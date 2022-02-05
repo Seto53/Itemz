@@ -9,7 +9,7 @@ header {
     height: 70px;
 }
 
-header .header-class{
+header .header-class {
     display: flex;
     justify-content: space-between;
     margin: 0 2%;
@@ -17,7 +17,7 @@ header .header-class{
     align-items: center;
 }
 
-header .header-options{
+header .header-options {
     display: flex;
     justify-content: space-between;
     width: 30%;
@@ -35,11 +35,11 @@ header .tiny-profile-p {
     width: 40px;
 }
 
-header .logo-image{
+header .logo-image {
     width: 130px;
 }
 
-header .exit-icon{
+header .exit-icon {
     color: var(--dark-secondary);
     font-size: 30px;
 }
@@ -173,7 +173,19 @@ input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-se
     -webkit-appearance: none
 }
 
+.home-header .cover {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
 
-
+.home-header {
+    width: 100%;
+    display: flex;
+    height: 166px;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text);
+}
 
 

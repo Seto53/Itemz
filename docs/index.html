@@ -2,79 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="styles/header.css" rel="stylesheet">
     <link href="styles/element.css" rel="stylesheet">
     <link href="styles/root.css" rel="stylesheet">
     <link href="styles/collection.css" rel="stylesheet">
     <link href="styles/countdown.css" rel="stylesheet">
     <link href="styles/drop.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link href="assets/dist/css/heroes.css" rel="stylesheet">
+
     <title>ItemZ</title>
 </head>
+
 <body>
-<script crossorigin="anonymous" src="https://kit.fontawesome.com/1521e42fd4.js"></script>
-<header>
-    <div class="header-class">
-        <img alt="logo" class="logo-image" src="assets/logo_with_name.png">
-        <div class="navigation-container w-container">
-            <form action="" class="search-3 w-form">
-                <label for="search"></label>
-                <input class="search-input-2 w-input" id="search" maxlength="256" name="query"
-                       placeholder="Search items and drops" required="" type="search"/>
-                <input class="search-button-2 w-button" type="submit" value="Search"/>
-            </form>
+<main>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/1521e42fd4.js"></script>
+    <header>
+        <div class="header-class">
+            <img alt="logo" class="logo-image" src="assets/logo_with_name.png">
+            <div class="navigation-container w-container">
+                <form action="" class="search-3 w-form">
+                    <label for="search"></label>
+                    <input class="search-input-2 w-input" id="search" maxlength="256" name="query"
+                           placeholder="Search items and drops" required="" type="search"/>
+                    <input class="search-button-2 w-button" type="submit" value="Search"/>
+                </form>
+            </div>
+            <div class="header-options">
+                <a href="index.html"> Home </a>
+                <a href="settings.html"> Settings </a>
+                <a href="profile.html"> <img alt="profile" class="tiny-profile-p" src="assets/profile_picture.png"> </a>
+                <i class="fas fa-sign-out-alt exit-icon"></i>
+            </div>
         </div>
-        <div class="header-options">
-            <a href="index.html"> Home </a>
-            <a href="settings.html"> Settings </a>
-            <a href="profile.html"> <img alt="profile" class="tiny-profile-p" src="assets/profile_picture.png"> </a>
-            <i class="fas fa-sign-out-alt exit-icon"></i>
+    </header>
+
+    <div class="home-header">
+        <img alt="cover" class="cover" src="assets/cover.png">
+    </div>
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img alt="Digital Collectibles" class="d-block mx-lg-auto img-fluid drop" height="500" loading="lazy"
+                     src="assets/temp-digital-collectibles.jpg" width="700">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Discover, collect, and share your digital collectibles</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-primary btn-lg px-4 me-md-2" type="button">Explore</button>
+                    <button class="btn btn-outline-secondary btn-lg px-4" type="button">Profile</button>
+                </div>
+            </div>
         </div>
     </div>
-</header>
 
-<div class="home-header">
-    <img alt="cover" class="cover" src="assets/cover.png">
-</div>
+    <div class="container-countdown">
+        <div>
+            <a href="drop.html"> <img alt="Collectible Name" class="drop" src="assets/element.png"></a>
+        </div>
+        <script>
+            //code from https://www.w3schools.com/howto/howto_js_countdown.asp
+            const countDownDate = new Date("Feb 5, 2022 20:46:25").getTime();
 
-<div class="container">
-    <div class="drop">
-        <a href="drop.html"> <img alt="Collectible Name" class="drop" src="assets/element.png"></a>
+            const x = setInterval(function () {
+
+                const now = new Date().getTime();
+
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days.toString()
+                document.getElementById("hours").innerText = hours.toString()
+                document.getElementById("minutes").innerText = minutes.toString()
+                document.getElementById("seconds").innerText = seconds.toString()
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("headline").innerHTML = "DROP LIVE";
+                }
+            }, 1000);</script>
+        <h1 id="headline">Drops In</h1>
+        <div id="countdown">
+            <ul>
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hours</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+            </ul>
+        </div>
     </div>
-    <script>
-        //code from https://www.w3schools.com/howto/howto_js_countdown.asp
-        var countDownDate = new Date("Feb 5, 2022 20:46:25").getTime();
-
-        var x = setInterval(function () {
-
-            var now = new Date().getTime();
-
-            var distance = countDownDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days.toString()
-            document.getElementById("hours").innerText = hours.toString()
-            document.getElementById("minutes").innerText = minutes.toString()
-            document.getElementById("seconds").innerText = seconds.toString()
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("headline").innerHTML = "DROP LIVE";
-            }
-        }, 1000);</script>
-    <h1 id="headline">Drops In</h1>
-    <div id="countdown">
-        <ul>
-            <li><span id="days"></span>days</li>
-            <li><span id="hours"></span>Hours</li>
-            <li><span id="minutes"></span>Minutes</li>
-            <li><span id="seconds"></span>Seconds</li>
-        </ul>
-    </div>
-</div>
-
+</main>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
