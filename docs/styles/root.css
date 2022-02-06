@@ -3,4 +3,9 @@
     --light-secondary: #eeeeee;
     --dark-secondary: #9f9f9f;
     --text: #010101;
+    --rarity-common: #00e896;
+    --rarity-uncommon: #00c8fa;
+    --rarity-rare: #f68427;
+    --rarity-epic: #8300f3;
+    --rarity-legendary: #fbc315;
 }

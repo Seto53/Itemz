@@ -25,7 +25,7 @@ a limited amount of digital collectibles that are available to buy at an exact t
 drop is over when it is sold out. It includes a search bar to find specific drops.
 - Second page (Drop) can be accessed when clicking a collectible. It gives specific
 information such as the remaining time for the drop, the ability to view the collectible in
-high detail, the price in coins, the rarity (common, uncommon, rare, ultra-rare) and the
+high detail, the price in coins, the rarity (common, uncommon, rare, epic, legendary) and the
 quantity. There is a Buy Now button that is greyed out until the drop is live. Once bought,
 the user will be notified if the purchase is successful or not.
 - Third page (Profile) can be opened from the top right corner of any page. The corner has

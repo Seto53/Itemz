@@ -4,6 +4,7 @@
 }
 
 .container-countdown .drop {
+    box-shadow: 0 0 20px 5px var(--rarity-uncommon);
     transition: transform .5s;
 }
 
