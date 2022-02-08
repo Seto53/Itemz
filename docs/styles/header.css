@@ -189,4 +189,8 @@ input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-se
     color: var(--text);
 }
 
+.nolog{
+    width: 10% !important;
+}
+
 
