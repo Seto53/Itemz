@@ -2,16 +2,14 @@
     --smaller: 0.75;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 .container-countdown {
     color: #1867af;
     margin: 0 auto;
     text-align: center;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 h1 {
