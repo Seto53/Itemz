@@ -1,4 +1,4 @@
-.collection{
+.collection-profile{
     display: grid;
     grid-template-columns: repeat(auto-fill,25%);
     padding: 50px;
