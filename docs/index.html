@@ -4,11 +4,11 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="styles/header.css" rel="stylesheet">
-    <link href="styles/element.css" rel="stylesheet">
     <link href="styles/root.css" rel="stylesheet">
-    <link href="styles/collection.css" rel="stylesheet">
     <link href="styles/countdown.css" rel="stylesheet">
     <link href="styles/drop.css" rel="stylesheet">
+    <link href="styles/hero.css" rel="stylesheet">
+    <link href="styles/collectibles.css" rel="stylesheet">
 
     <title>ItemZ</title>
 </head>
@@ -40,25 +40,42 @@
         <img alt="cover" class="cover" src="assets/cover.png">
     </div>
 
-<!--    <div class="container col-xxl-8 px-4 py-5">-->
-<!--        <script src="assets/dist/js/bootstrap.bundle.min.js"></script>-->
-<!--        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">-->
-<!--            <div class="col-10 col-sm-8 col-lg-6">-->
-<!--                <img alt="Digital Collectibles" class="d-block mx-lg-auto img-fluid drop" height="500" loading="lazy"-->
-<!--                     src="assets/temp-digital-collectibles.jpg" width="700">-->
-<!--            </div>-->
-<!--            <div class="col-lg-6">-->
-<!--                <h1 class="display-5 fw-bold lh-1 mb-3">Discover, collect, and share your digital collectibles</h1>-->
-<!--                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s-->
-<!--                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid-->
-<!--                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>-->
-<!--                <div class="d-grid gap-2 d-md-flex justify-content-md-start">-->
-<!--                    <button class="btn btn-primary btn-lg px-4 me-md-2" type="button">Explore</button>-->
-<!--                    <button class="btn btn-outline-secondary btn-lg px-4" type="button">Profile</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="outer" id="wrapper">
+        <div class="outer" id="hero-details">
+            <h1 class="">Discover, collect, and share your digital collectibles</h1>
+            <p class="">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
+                most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
+                system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+            <div class="">
+                <button type="button">Explore</button>
+                <button type="button">Profile</button>
+            </div>
+        </div>
+        <div class="outer">
+            <img alt="Digital Collectibles" class="drop" loading="lazy"
+                 src="assets/temp-digital-collectibles.jpg" width="680">
+        </div>
+    </div>
+
+    <!--    <div class="container col-xxl-8 px-4 py-5">-->
+    <!--        <script src="assets/dist/js/bootstrap.bundle.min.js"></script>-->
+    <!--        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">-->
+    <!--            <div class="col-10 col-sm-8 col-lg-6">-->
+    <!--                <img alt="Digital Collectibles" class="d-block mx-lg-auto img-fluid drop" height="500" loading="lazy"-->
+    <!--                     src="assets/temp-digital-collectibles.jpg" width="700">-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-6">-->
+    <!--                <h1 class="display-5 fw-bold lh-1 mb-3">Discover, collect, and share your digital collectibles</h1>-->
+    <!--                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s-->
+    <!--                    most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid-->
+    <!--                    system, extensive prebuilt components, and powerful JavaScript plugins.</p>-->
+    <!--                <div class="d-grid gap-2 d-md-flex justify-content-md-start">-->
+    <!--                    <button class="btn btn-primary btn-lg px-4 me-md-2" type="button">Explore</button>-->
+    <!--                    <button class="btn btn-outline-secondary btn-lg px-4" type="button">Profile</button>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <div class="container-countdown">
         <div>
@@ -66,7 +83,7 @@
         </div>
         <script>
             //code from https://www.w3schools.com/howto/howto_js_countdown.asp
-            const countDownDate = new Date("Feb 5, 2022 20:46:25").getTime();
+            const countDownDate = new Date("Feb 9, 2022 20:46:25").getTime();
 
             const x = setInterval(function () {
 
@@ -99,8 +116,8 @@
             </ul>
         </div>
     </div>
+
 </main>
-<!--<script src="assets/dist/js/bootstrap.bundle.min.js"></script>-->
 </body>
 
 </html>
