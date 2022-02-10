@@ -41,11 +41,6 @@ header .logo-image {
     width: 130px;
 }
 
-header .exit-icon {
-    color: var(--dark-secondary);
-    font-size: 30px;
-}
-
 header .search-3 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -64,7 +59,7 @@ header .search-3 {
     grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
-    font-size: 15px;
+    font-size: 1rem;
 }
 
 .navigation-container {
@@ -97,7 +92,7 @@ header .search-3 {
 .search-input-2 {
     margin: 0 30px;
     border-radius: 7px;
-    font-size: 15px;
+    font-size: 1rem;
     border: none;
     width: 450px;
 }
@@ -119,7 +114,7 @@ input.w-button {
     width: 100%;
     height: 38px;
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.42857143;
     color: #333;
     vertical-align: middle;
