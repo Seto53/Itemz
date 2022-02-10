@@ -37,3 +37,9 @@
     list-style-type: none;
 }
 
+.left-information img{
+    height: 340px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px var(--light-secondary);
+}
+

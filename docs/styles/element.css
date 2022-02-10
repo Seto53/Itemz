@@ -26,17 +26,17 @@
     object-fit: cover;
 }
 
-.element .element-sub-title{
+.element-sub-title{
     font-size: 15px;
     margin: 0;
 }
 
-.element .element-sub-username{
+.element-sub-username{
     color: var(--main-color);
     font-weight: bold;
 }
 
-.element .element-description{
+.element-description{
     color: var(--dark-secondary);
 }
 
