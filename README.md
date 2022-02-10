@@ -76,3 +76,22 @@ To view the mockups it is necessary to run a http server.
 2) In CMD, run the command npm install http-server -g
 3) Navigate to the specific path of your file folder (/docs) in CMD and run the command http-server
 4) Go to your browser and type localhost:8080.
+
+### Design System
+
+#### Color Palette
+The color palette is defined in [/docs/styles/root.css](https://github.com/professor-forward/project-messiteam/blob/deliverable2/docs/styles/root.css)
+
+Including a main color some secondary and text color, as well as the different colors that will be used to identify types of collectibles.
+
+### Fonts & Scales
+The font family used throughout the whole project is 'Rubik' sans-serif.
+
+We kept the default font scale, and use rem to change the sizes so that if we want to change the scale it's easy.
+
+### Icons & Images
+All our images are located in [/docs/assets](https://github.com/professor-forward/project-messiteam/tree/deliverable2/docs/assets)
+
+There are some default images that would be inputted for particular collectibles as well as official images like the logo.
+
+We are using Font Awesome icon family.
