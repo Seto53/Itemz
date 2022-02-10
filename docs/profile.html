@@ -4,113 +4,105 @@
     <meta charset="utf-8">
     <title> Profile </title>
     <link href="styles/profile.css">
-        <link rel="stylesheet" href="styles/header.css">
-        <link rel="stylesheet" href="styles/element.css">
-        <link rel="stylesheet" href="styles/root.css">
-        <link rel="stylesheet" href="styles/collection.css">
-        <link rel="stylesheet" href="styles/profile.css">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/element.css" rel="stylesheet">
+    <link href="styles/root.css" rel="stylesheet">
+    <link href="styles/collection.css" rel="stylesheet">
+    <link href="styles/profile.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rubik:400,700' rel='stylesheet'>
+
+    <!--    script for loading header-->
+    <script
+            crossorigin="anonymous"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
 </head>
 <body>
 
-        <script src="https://kit.fontawesome.com/1521e42fd4.js" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/1521e42fd4.js"></script>
 
-        <header>
-            <div class="header-class">
-                <img class="logo-image" alt="logo" src="assets/logo_with_name.png">
-                <div class="navigation-container w-container">
-                    <form action="" class="search-3">
-                        <label for="search"></label>
-                        <input class="search-input-2 w-input" id="search"
-                               maxlength="256" name="query"
-                               placeholder="Search items and drops"
-                               required=""
-                               type="search"/>
-                        <input class="search-button-2 w-button" type="submit" value="Search"/></form>
-                </div>
-                <div class="header-options">
-                    <a href="index.html"> Home </a>
-                    <a href="settings.html"> Settings </a>
-                    <a href="profile.html"> <img class="tiny-profile-p" alt="profile" src="assets/profile_picture.png"> </a>
-                    <a href="unlogged.html"><i class="fas fa-sign-out-alt exit-icon"></i></a>
+<div id="header"></div>
 
-                </div>
-            </div>
-        </header>
+<div class="profile-header">
+    <img alt="cover" class="cover" src="assets/cover.png">
+    <img alt="profile-picture" class="profile-p" src="assets/profile_picture.png">
+    <p class="username"> UserName </p>
+    <p class="sub-username"> some info of collection </p>
+</div>
 
+<div class="collection">
 
-        <div class="profile-header">
-            <img class="cover" alt="cover" src="assets/cover.png">
-            <img class="profile-p" alt="profile-picture" src="assets/profile_picture.png">
-            <p class="username"> UserName </p>
-            <p class="sub-username"> some info of collection </p>
-        </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/element.png">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-        <div class="collection">
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/element2.jpeg">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element.png">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/robot-nft-temp/unnamed.gif">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element2.jpeg">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/robot-nft-temp/unnamed%20(9).gif">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element.png">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/robot-nft-temp/unnamed%20(6).gif">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element2.jpeg">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/robot-nft-temp/unnamed%20(3).gif">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element2.jpeg">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+    <div class="element">
+        <a href="drop.html?id=aaa">
+            <img alt="image" class="element-image" src="assets/robot-nft-temp/unnamed%20(1).gif">
+            <p class="element-title"> Name of Collectible </p>
+            <p class="element-sub-title"> by <span class="element-sub-username">username</span></p>
+            <p class="element-description"> description </p>
+        </a>
+    </div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element.png">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
+</div>
 
-            <div class="element">
-                <a href="drop.html?id=aaa">
-                    <img class="element-image" alt="image" src="assets/element2.jpeg">
-                    <p class="element-title"> Name of Collectible </p>
-                    <p class="element-sub-title"> by <span class="element-sub-username">username</span> </p>
-                    <p class="element-description"> description </p>
-                </a>
-            </div>
-
-        </div>
-
-    </body>
+</body>
 </html>
