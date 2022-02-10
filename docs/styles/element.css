@@ -1,8 +1,7 @@
 .element{
-    width: 20vw;
-    display: flex;
+    width: 350px;
     margin-bottom: 20px;
-    height: 250px;
+    height: 350px;
 }
 
 .element p {
