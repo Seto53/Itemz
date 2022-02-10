@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/root.css">
     <link rel="stylesheet" href="styles/settings.css">
+    <link rel="stylesheet" href="styles/button.css">
     <link href='https://fonts.googleapis.com/css?family=Rubik:400,700' rel='stylesheet'>
 
     <!--    script for loading header-->
@@ -32,14 +33,14 @@
         <h2> Profile information </h2>
         <div class="profile-settings-content">
             <div>
-                <label for="birthdate"> Birth Date </label>
-                <br/>
-                <input placeholder="07/12/1999" id="birthdate" type="date">
-            </div>
-            <div>
                 <label for="username"> Username </label>
                 <br/>
                 <input placeholder="johndoe" id="username" type="text">
+            </div>
+            <div>
+                <label for="birthdate"> Birth Date </label>
+                <br/>
+                <input placeholder="07/12/1999" id="birthdate" type="date">
             </div>
         </div>
 
@@ -47,6 +48,10 @@
         <div>
             <input id="mode" type="checkbox">
             <label for="mode"> Dark Mode </label>
+        </div>
+
+        <div class="logout-button button">
+            <a> LOG OUT </a>
         </div>
 
     </div>
