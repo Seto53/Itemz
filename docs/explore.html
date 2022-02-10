@@ -8,30 +8,23 @@
     <link href="styles/root.css" rel="stylesheet">
     <link href="styles/explore.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Rubik:400,700' rel='stylesheet'>
+
+    <!--    script for loading header-->
+    <script
+            crossorigin="anonymous"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+
 </head>
 <body>
-<header>
-    <div class="header-class">
-        <img alt="logo" class="logo-image" src="assets/logo_with_name.png">
-        <div class="navigation-container w-container">
-            <form action="" class="search-3">
-                <label for="search"></label>
-                <input class="search-input-2 w-input" id="search"
-                       maxlength="256" name="query"
-                       placeholder="Search items and drops"
-                       required=""
-                       type="search"/>
-                <input class="search-button-2 w-button" type="submit" value="Search"/></form>
-        </div>
-        <div class="header-options">
-            <a href="index.html"> Home </a>
-            <a href="explore.html"> Explore </a>
-            <a href="settings.html"> Settings </a>
-            <a href="profile.html"> <img alt="profile" class="tiny-profile-p" src="assets/profile_picture.png"> </a>
-
-        </div>
-    </div>
-</header>
+<div id="header"></div>
 
 <div class="explore-header">
     <h1 class="username"> Explore Collectibles </h1>
