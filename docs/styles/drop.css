@@ -11,3 +11,29 @@
 .container-countdown img.drop:hover {
     transform: scale(1.05);
 }
+
+.content{
+    margin: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content .right-information{
+    width: 40%;
+    box-shadow: 5px 7px 10px 3px var(--light-secondary);
+    padding: 0 40px;
+    border-radius: 30px;
+}
+
+.content .right-information .element-title{
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+#countdown ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
