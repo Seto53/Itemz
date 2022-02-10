@@ -4,10 +4,20 @@
     background-color: var(--main-color);
     border-radius: 10px;
     color: white;
-    margin-top: 50px;
+    text-decoration: none;
     box-shadow: 2px 2px 4px 4px var(--light-secondary);
 }
 
 .button:hover{
     background-color: #3053ab;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.button-container .button{
+    width: 40%;
 }
