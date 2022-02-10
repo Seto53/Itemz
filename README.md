@@ -53,4 +53,26 @@ users, drops and collectibles.
 
 The pdf version of this project outline can be found [HERE](https://github.com/professor-forward/project-messiteam/blob/develop/projectOutline/Project%20Outline.pdf)
 
+### Project Structure
+```bash
+├── docs
+│   ├── html files
+│   ├── assets
+│   │   ├── logo.png
+│   │   └── ...
+│   └── styles
+│   │   ├── header.css
+│   │   └── ...
+│   └── scripts
+│       ├── countdown.js
+│       └── ...
+└── README.md
+```
 
+### Set UP
+To view the mockups it is necessary to run a http server.
+
+1) Have Node.js installed in your system.
+2) In CMD, run the command npm install http-server -g
+3) Navigate to the specific path of your file folder (/docs) in CMD and run the command http-server
+4) Go to your browser and type localhost:8080.
