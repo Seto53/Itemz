@@ -8,6 +8,16 @@
     transition: transform .5s;
 }
 
+.drop-header{
+    font-size: 25px;
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text);
+}
+
 .container-countdown img.drop:hover {
     transform: scale(1.05);
 }
