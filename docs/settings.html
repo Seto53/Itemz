@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/root.css">
-    <link rel="stylesheet" href="styles/settings.css">
-    <link rel="stylesheet" href="styles/button.css">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/root.css" rel="stylesheet">
+    <link href="styles/settings.css" rel="stylesheet">
+    <link href="styles/button.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Rubik:400,700' rel='stylesheet'>
 
     <!--    script for loading header-->
@@ -23,38 +23,43 @@
     </script>
 </head>
 <body>
-    <script src="https://kit.fontawesome.com/1521e42fd4.js" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/1521e42fd4.js"></script>
 
-    <div id="header"></div>
+<div id="header"></div>
 
-    <div class="content">
-        <h1> Settings </h1>
-        <hr/>
-        <h2> Profile information </h2>
-        <div class="profile-settings-content">
-            <div>
-                <label for="username"> Username </label>
-                <br/>
-                <input placeholder="johndoe" id="username" type="text">
-            </div>
-            <div>
-                <label for="birthdate"> Birth Date </label>
-                <br/>
-                <input placeholder="07/12/1999" id="birthdate" type="date">
-            </div>
-        </div>
-
-        <h2> View options </h2>
+<div class="content">
+    <h1> Settings </h1>
+    <hr/>
+    <h2> Profile information </h2>
+    <div class="profile-settings-content">
         <div>
-            <input id="mode" type="checkbox">
-            <label for="mode"> Dark Mode </label>
+            <label for="username"> Username </label>
+            <br/>
+            <input id="username" placeholder="johndoe" type="text">
         </div>
-
-        <div class="logout-button button">
-            <a> LOG OUT </a>
+        <div>
+            <label for="birthdate"> Birth Date </label>
+            <br/>
+            <input id="birthdate" placeholder="07/12/1999" type="date">
         </div>
-
     </div>
+
+    <div class="logout-button button">
+        <a> BUY GOLD </a>
+    </div>
+
+    <h2> View options </h2>
+    <div>
+        <input id="mode" type="checkbox">
+        <label for="mode"> Dark Mode </label>
+    </div>
+
+    <div class="logout-button button">
+        <a> LOG OUT </a>
+    </div>
+
+
+</div>
 
 </body>
 </html>
