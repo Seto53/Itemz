@@ -1,6 +1,6 @@
 //code from https://www.w3schools.com/howto/howto_js_countdown.asp
 
-const countDownDate = new Date("Feb 10, 2022 23:46:25").getTime();
+const countDownDate = new Date("Feb 15, 2022 23:46:25").getTime();
 
 const x = setInterval(function () {
 
