@@ -1,5 +1,5 @@
 # CSI3140 Project Winter 2022
-## Name TBD
+## ITEMZ
 
 ## Student Information
 - Rocio Ferreiro Rico - 300271563
@@ -25,7 +25,7 @@ a limited amount of digital collectibles that are available to buy at an exact t
 drop is over when it is sold out. It includes a search bar to find specific drops.
 - Second page (Drop) can be accessed when clicking a collectible. It gives specific
 information such as the remaining time for the drop, the ability to view the collectible in
-high detail, the price in coins, the rarity (common, uncommon, rare, ultra-rare) and the
+high detail, the price in coins, the rarity (common, uncommon, rare, epic, legendary) and the
 quantity. There is a Buy Now button that is greyed out until the drop is live. Once bought,
 the user will be notified if the purchase is successful or not.
 - Third page (Profile) can be opened from the top right corner of any page. The corner has
@@ -49,7 +49,49 @@ Scope Extension Idea: Ban a user, increase user coins.
 fandom.
 - PostgreSQL will be used as a database. The database will collect information about the
 users, drops and collectibles.
+- The Bootstrap framework will be used for some frontend elements.
 
 The pdf version of this project outline can be found [HERE](https://github.com/professor-forward/project-messiteam/blob/develop/projectOutline/Project%20Outline.pdf)
 
+### Project Structure
+```bash
+├── docs
+│   ├── html files
+│   ├── assets
+│   │   ├── logo.png
+│   │   └── ...
+│   └── styles
+│   │   ├── header.css
+│   │   └── ...
+│   └── scripts
+│       ├── countdown.js
+│       └── ...
+└── README.md
+```
 
+### Set UP
+To view the mockups it is necessary to run a http server.
+
+1) Have Node.js installed in your system.
+2) In CMD, run the command npm install http-server -g
+3) Navigate to the specific path of your file folder (/docs) in CMD and run the command http-server
+4) Go to your browser and type localhost:8080.
+
+### Design System
+
+#### Color Palette
+The color palette is defined in [/docs/styles/root.css](https://github.com/professor-forward/project-messiteam/blob/deliverable2/docs/styles/root.css)
+
+Including a main color some secondary and text color, as well as the different colors that will be used to identify types of collectibles.
+
+### Fonts & Scales
+The font family used throughout the whole project is 'Rubik' sans-serif.
+
+We kept the default font scale, and use rem to change the sizes so that if we want to change the scale it's easy.
+
+### Icons & Images
+All our images are located in [/docs/assets](https://github.com/professor-forward/project-messiteam/tree/deliverable2/docs/assets)
+
+There are some default images that would be inputted for particular collectibles as well as official images like the logo.
+
+We are using Font Awesome icon family.
