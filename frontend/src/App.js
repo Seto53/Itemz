@@ -1,5 +1,3 @@
-import  './docs/styles/header.css';
-import  './docs/styles/root.css';
 import AppRouter from './components/Router';
 
 function App() {
