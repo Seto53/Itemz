@@ -28,7 +28,7 @@
 //     console.log(err ? err.stack : res.rows[0].message) // Connected to Data Base!
 //     client.end()
 // })
-
+require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const db = require('./queries')
@@ -54,4 +54,5 @@ app.delete('/users/:id', db.deleteUser)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)
+    console.log(process.env.PGUSER);
 })

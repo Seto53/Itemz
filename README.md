@@ -72,10 +72,10 @@ The pdf version of this project outline can be found [HERE](https://github.com/p
 ### Set UP
 To view the mockups it is necessary to run a http server.
 
-1) Have Node.js installed in your system.
-2) In CMD, run the command npm install http-server -g
-3) Navigate to the specific path of your file folder (/docs) in CMD and run the command http-server
-4) Go to your browser and type localhost:8080.
+1) Have Node.js and NPM installed in your system.
+2) Run npm install in /backend and in /frontend.
+3) To run the Backend enter the /backend directory and run docker-compose up -d and then node main.js.
+4) To run the Frontend enter the /frontend directory and run npm start.
 
 ### Design System
 
