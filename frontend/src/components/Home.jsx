@@ -7,13 +7,14 @@ import  '../docs/styles/countdown.css';
 import cover from '../docs/assets/cover.png';
 import element from '../docs/assets/collectibles/element.png';
 import tempCollectible from '../docs/assets/temp-digital-collectibles.jpg';
-
+import CountDown from './CountDown';
 
 export default function Home() {
+
+    const newDrop = {id: '1', name: 'Collectible Name', img: element, date: "Feb 20, 2022 23:46:25"};
+
     return (
         <main>
-            <script src="scripts/countdown.js" type="text/javascript"></script>
-
             <div className="home-header">
                 <img alt="cover" className="cover" src={cover}/>
             </div>
@@ -26,10 +27,10 @@ export default function Home() {
                         most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid
                         system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                     <div className="button-container">
-                        <a className="button" href="explore.html">
+                        <a className="button" href={"/explore"}>
                             <p>Explore</p>
                         </a>
-                        <a className="button" href="profile.html">
+                        <a className="button" href={"/profile"}>
                             <p>Profile</p>
                         </a>
                     </div>
@@ -39,26 +40,7 @@ export default function Home() {
                          src={tempCollectible} width="680"/>
                 </div>
             </div>
-
-            <div className="drop-header">
-                <h1>Upcoming Drop</h1>
-            </div>
-            <div className="container-countdown">
-                <div>
-                    <a href="drop.html"> <img alt="Collectible Name" className="drop"
-                                              src={element}/></a>
-                </div>
-                <h2>Collectible Name</h2>
-                <h1>Drops In</h1>
-                <div id="countdown">
-                    <ul>
-                        <li><span id="days"> </span>days</li>
-                        <li><span id="hours"> </span>Hours</li>
-                        <li><span id="minutes"> </span>Minutes</li>
-                        <li><span id="seconds"> </span>Seconds</li>
-                    </ul>
-                </div>
-            </div>
+            <CountDown drop={newDrop}/>
             <div className="drop-header">
                 <h1>Recent Drops</h1>
             </div>
