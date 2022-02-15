@@ -6,10 +6,19 @@ import  '../docs/styles/collection.css';
 import cover from '../docs/assets/cover.png';
 import picture from '../docs/assets/profile_picture.png';
 import element from '../docs/assets/collectibles/element.png';
+import {get} from './http';
 
 export default function Profile() {
 
-    const userinfo = {id: '1', name: 'Collectible Name', username: 'username', img: picture};
+    const [userinfo, setUserinfo] = React.useState({id: '1', name: 'Collectible Name', username: 'username', img: picture});
+
+    React.useEffect( () => {
+        get('users/1').then(res => {
+            setUserinfo({name: res[0].name, username: res[0].email, id: res[0].id, img: picture})
+        }).catch(e => {
+            console.log(e)
+        })
+    }, [])
 
     const collectibleCollection = [
         {name: 'Name', description: 'Description', img: element, id: '1'},
