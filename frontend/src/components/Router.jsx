@@ -7,6 +7,7 @@ import {
 import Header from './Header';
 import Home from './Home';
 import Profile from  './Profile';
+import Explore from  './Explore';
 
 export default function AppRouter() {
     return (
@@ -55,7 +56,7 @@ function explore() {
         {name: 'Explore', href: './explore', current: true},
         {name: 'Settings', href: './settings', current: false},
     ]
-    return withHeader(<Profile/>, navigation);
+    return withHeader(<Explore/>, navigation);
 }
 
 function withHeader(element, navigation){
