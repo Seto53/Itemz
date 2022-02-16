@@ -70,6 +70,17 @@ export default function Header({element, navigation}) {
                                                     ))}
                                                 </div>
                                             </div>
+                                            <div className="navigation-container hidden md:block w-container">
+                                                <form action="" className="search-3">
+                                                    <label htmlFor="search"/>
+                                                    <input className="search-input-2 w-input" id="search"
+                                                           maxLength="200" name="query"
+                                                           placeholder="Search items and drops"
+                                                           required=""
+                                                           type="search"/>
+                                                    <input className="search-button-2 w-button" type="submit"
+                                                           value="Search"/></form>
+                                            </div>
                                         </div>
                                         <div
                                             className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -85,13 +96,13 @@ export default function Header({element, navigation}) {
                                             <Menu as="div" className="ml-3 relative">
                                                 <div>
                                                     <a href={'./profile'}>
-                                                            <span className="sr-only">Open user menu</span>
-                                                            <img
-                                                                className="h-8 w-8 rounded-full"
-                                                                src={require('../docs/assets/profile_picture.png')}
-                                                                alt="profile picture"
-                                                            />
-                                                        </a>
+                                                        <span className="sr-only">Open user menu</span>
+                                                        <img
+                                                            className="h-8 w-8 rounded-full"
+                                                            src={require('../docs/assets/profile_picture.png')}
+                                                            alt="profile picture"
+                                                        />
+                                                    </a>
                                                 </div>
                                             </Menu>
                                         </div>
