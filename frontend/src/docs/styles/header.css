@@ -62,11 +62,11 @@ header .search-3 {
 }
 
 .navigation-container {
-    width: 100%;
+    width: 60%;
     margin-right: auto;
     margin-left: 0;
     -webkit-justify-content: space-between;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .w-container {
@@ -184,7 +184,7 @@ input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-se
     color: var(--text);
 }
 
-.nolog{
+.nolog {
     width: 10% !important;
 }
 
