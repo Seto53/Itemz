@@ -14,14 +14,6 @@ header a{
     text-decoration: none;
 }
 
-/*header .header-class {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    margin: 0 2%;*/
-/*    height: 100%;*/
-/*    align-items: center;*/
-/*}*/
-
 header .header-options {
     display: flex;
     justify-content: space-between;

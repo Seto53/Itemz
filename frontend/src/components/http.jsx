@@ -1,10 +1,5 @@
 export const baseurl = "http://localhost:3001/";
 
-// type Config = {
-//     headers?: Object | null,
-//     noAuth?: boolean,
-// };
-
 const request = (url, method, body, config) => {
 
     let headers = {
