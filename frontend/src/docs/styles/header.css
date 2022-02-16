@@ -89,7 +89,8 @@ header .search-3 {
 }
 
 .search-input-2 {
-    margin: 0 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 7px;
     font-size: 1rem;
     border: none;

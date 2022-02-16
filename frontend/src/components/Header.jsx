@@ -74,7 +74,7 @@ export default function Header({element}) {
                                                 <form action="" className="search-3">
                                                     <label htmlFor="search"/>
                                                     <input className="search-input-2 w-input" id="search"
-                                                           maxLength="200" name="query"
+                                                           maxLength="250" name="query"
                                                            placeholder="Search items and drops"
                                                            required=""
                                                            type="search"/>
@@ -84,6 +84,9 @@ export default function Header({element}) {
                                         </div>
                                         <div
                                             className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                            <a href="./settings"> <img alt="gold" className="tiny-profile-p"
+                                                                          src={require('../docs/assets/gold.png')}/>
+                                            </a>
                                             <button
                                                 type="button"
                                                 className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
