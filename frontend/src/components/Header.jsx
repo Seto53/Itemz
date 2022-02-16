@@ -5,8 +5,8 @@ import {Disclosure, Menu} from '@headlessui/react'
 import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
 
 const navigation = [
-    {name: 'Explore', href: './explore', current: false},
     {name: 'Home', href: './', current: false},
+    {name: 'Explore', href: './explore', current: false},
     {name: 'Settings', href: './settings', current: false},
 ]
 

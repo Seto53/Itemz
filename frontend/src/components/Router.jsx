@@ -21,12 +21,10 @@ export default function AppRouter() {
     );
 }
 
-
-
 function HomeF() {
     const navigation = [
-        {name: 'Explore', href: './explore', current: false},
         {name: 'Home', href: './', current: true},
+        {name: 'Explore', href: './explore', current: false},
         {name: 'Settings', href: './settings', current: false},
     ]
     return withHeader(<Home/>, navigation);
@@ -35,8 +33,8 @@ function HomeF() {
 
 function theProfile() {
     const navigation = [
-        {name: 'Explore', href: './explore', current: false},
         {name: 'Home', href: './', current: false},
+        {name: 'Explore', href: './explore', current: false},
         {name: 'Settings', href: './settings', current: false},
     ]
     return withHeader(<Profile/>, navigation);
@@ -44,8 +42,8 @@ function theProfile() {
 
 function settings() {
     const navigation = [
-        {name: 'Explore', href: './explore', current: false},
         {name: 'Home', href: './', current: false},
+        {name: 'Explore', href: './explore', current: false},
         {name: 'Settings', href: './settings', current: true},
     ]
     return withHeader(<Profile/>, navigation);
@@ -53,8 +51,8 @@ function settings() {
 
 function explore() {
     const navigation = [
-        {name: 'Explore', href: './explore', current: true},
         {name: 'Home', href: './', current: false},
+        {name: 'Explore', href: './explore', current: true},
         {name: 'Settings', href: './settings', current: false},
     ]
     return withHeader(<Profile/>, navigation);
