@@ -8,6 +8,7 @@ import Header from './Header';
 import Home from './Home';
 import Profile from  './Profile';
 import Explore from  './Explore';
+import Settings from  './Settings';
 
 export default function AppRouter() {
     return (
@@ -47,7 +48,7 @@ function settings() {
         {name: 'Explore', href: './explore', current: false},
         {name: 'Settings', href: './settings', current: true},
     ]
-    return withHeader(<Profile/>, navigation);
+    return withHeader(<Settings/>, navigation);
 }
 
 function explore() {

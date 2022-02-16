@@ -10,6 +10,10 @@ header {
     top: 0;
 }
 
+header a{
+    text-decoration: none;
+}
+
 /*header .header-class {*/
 /*    display: flex;*/
 /*    justify-content: space-between;*/
@@ -120,27 +124,27 @@ input.w-button {
     padding: 8px 12px;
     font-size: 1rem;
     line-height: 1.42857143;
-    color: #333;
+    color: var(--light-secondary);
     vertical-align: middle;
-    background-color: var(--light-secondary);
-    border: 1px solid #ccc
+    background-color: transparent;
+    border: 1px solid var(--main-color);
 }
 
 .w-input:-moz-placeholder {
-    color: #999
+    color: #bebebe;
 }
 
 .w-input::-moz-placeholder {
-    color: #999;
+    color: #bebebe;
     opacity: 1
 }
 
 .w-input:-ms-input-placeholder {
-    color: #999
+    color: #bebebe;
 }
 
 .w-input::-webkit-input-placeholder {
-    color: #999
+    color: #bebebe
 }
 
 .w-input:focus {

@@ -20,7 +20,7 @@ export default function Header({element, navigation}) {
             <header className="App-header">
                 <div className="header-class">
 
-                    <Disclosure as="nav" className="bg-gray-800">
+                    <Disclosure as="nav" className="bg-gray-600">
                         {({open}) => (
                             <>
                                 <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -87,13 +87,6 @@ export default function Header({element, navigation}) {
                                             <a href="./settings"> <img alt="gold" className="tiny-profile-p"
                                                                           src={require('../docs/assets/gold.png')}/>
                                             </a>
-                                            <button
-                                                type="button"
-                                                className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                                            >
-                                                <span className="sr-only">View notifications</span>
-                                                <BellIcon className="h-6 w-6" aria-hidden="true"/>
-                                            </button>
 
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="ml-3 relative">

@@ -1,6 +1,5 @@
 import React from "react";
 import '../docs/styles/root.css';
-import '../docs/styles/drop.css';
 import '../docs/styles/button.css';
 import '../docs/styles/hero.css';
 import '../docs/styles/countdown.css';
@@ -36,10 +35,10 @@ export default function Home() {
                             grid
                             system, extensive prebuilt components, and powerful JavaScript plugins.</p>
                         <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <a href="/explore">
+                            <a href={"/explore"}>
                                 <button className="btn btn-primary btn-lg px-4 me-md-2" type="button">Explore</button>
                             </a>
-                            <a href="/profile">
+                            <a href={"/profile"}>
                                 <button className="btn btn-outline-secondary btn-lg px-4" type="button">Profile</button>
                             </a>
                         </div>
