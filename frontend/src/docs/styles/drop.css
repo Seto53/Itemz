@@ -6,6 +6,7 @@
 .container-countdown .drop {
     box-shadow: 0 0 15px -2px var(--rarity-uncommon);
     transition: transform .5s;
+    margin: auto;
 }
 
 .drop-header{

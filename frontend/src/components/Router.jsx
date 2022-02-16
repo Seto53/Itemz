@@ -12,8 +12,9 @@ export default function AppRouter() {
     return (
         <Router>
             <Switch>
-                <Route path={"/settings"} element={About()}> </Route>
                 <Route path={"/profile"} element={theProfile()}> </Route>
+                <Route path={"/settings"} element={settings()}> </Route>
+                <Route path={"/explore"} element={explore()}> </Route>
                 <Route path={"/"} element={HomeF()}/>
             </Switch>
         </Router>
@@ -23,17 +24,42 @@ export default function AppRouter() {
 
 
 function HomeF() {
-    return withHeader(<Home/>);
+    const navigation = [
+        {name: 'Explore', href: './explore', current: false},
+        {name: 'Home', href: './', current: true},
+        {name: 'Settings', href: './settings', current: false},
+    ]
+    return withHeader(<Home/>, navigation);
 }
 
-function About() {
-    return withHeader(<h2>About</h2>);
-}
 
 function theProfile() {
-    return withHeader(<Profile/>);
+    const navigation = [
+        {name: 'Explore', href: './explore', current: false},
+        {name: 'Home', href: './', current: false},
+        {name: 'Settings', href: './settings', current: false},
+    ]
+    return withHeader(<Profile/>, navigation);
 }
 
-function withHeader(element){
-    return <Header element={element}/>
+function settings() {
+    const navigation = [
+        {name: 'Explore', href: './explore', current: false},
+        {name: 'Home', href: './', current: false},
+        {name: 'Settings', href: './settings', current: true},
+    ]
+    return withHeader(<Profile/>, navigation);
+}
+
+function explore() {
+    const navigation = [
+        {name: 'Explore', href: './explore', current: true},
+        {name: 'Home', href: './', current: false},
+        {name: 'Settings', href: './settings', current: false},
+    ]
+    return withHeader(<Profile/>, navigation);
+}
+
+function withHeader(element, navigation){
+    return <Header element={element} navigation={navigation}/>
 }

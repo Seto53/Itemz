@@ -26,6 +26,10 @@ header .header-options {
     align-items: center;
 }
 
+a {
+    text-decoration: none;
+}
+
 header .header-options a {
     text-decoration: none;
     color: var(--text);
@@ -139,7 +143,7 @@ input.w-button {
 }
 
 .w-input:focus {
-    border-color: #3898ec;
+    border-color: var(--main-color);
     outline: 0
 }
 
