@@ -12,6 +12,7 @@ header {
 
 header a{
     text-decoration: none;
+    color: var(--text);
 }
 
 header .header-options {
@@ -116,27 +117,27 @@ input.w-button {
     padding: 8px 12px;
     font-size: 1rem;
     line-height: 1.42857143;
-    color: var(--light-secondary);
+    color: var(--text);
     vertical-align: middle;
     background-color: transparent;
     border: 1px solid var(--main-color);
 }
 
 .w-input:-moz-placeholder {
-    color: #bebebe;
+    color: #8d8c8c;
 }
 
 .w-input::-moz-placeholder {
-    color: #bebebe;
+    color: #8d8c8c;
     opacity: 1
 }
 
 .w-input:-ms-input-placeholder {
-    color: #bebebe;
+    color: #8d8c8c;
 }
 
 .w-input::-webkit-input-placeholder {
-    color: #bebebe
+    color: #8d8c8c
 }
 
 .w-input:focus {
