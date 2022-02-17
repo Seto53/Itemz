@@ -6,6 +6,7 @@ import  '../docs/styles/collection.css';
 import cover from '../docs/assets/cover.png';
 import picture from '../docs/assets/profile_picture.png';
 import element from '../docs/assets/collectibles/element.png';
+import Element from './Element';
 import {get} from './http';
 
 export default function Profile() {
@@ -21,13 +22,13 @@ export default function Profile() {
     }, [])
 
     const collectibleCollection = [
-        {name: 'Name', description: 'Description', img: element, id: '1'},
-        {name: 'Name', description: 'Description', img: element, id: '2'},
-        {name: 'Name', description: 'Description', img: element, id: '3'},
-        {name: 'Name', description: 'Description', img: element, id: '4'},
-        {name: 'Name', description: 'Description', img: element, id: '5'},
-        {name: 'Name', description: 'Description', img: element, id: '6'},
-        {name: 'Name', description: 'Description', img: element, id: '7'}
+        {img: element, id: '1'},
+        {img: element, id: '2'},
+        {img: element, id: '3'},
+        {img: element, id: '4'},
+        {img: element, id: '5'},
+        {img: element, id: '6'},
+        {img: element, id: '7'}
     ]
 
     return (
@@ -41,13 +42,7 @@ export default function Profile() {
 
             <div className="collection">
                 {collectibleCollection.map(e =>
-                    <div className="element">
-                        <a href={`drop.html?id=${e.id}`}>
-                            <img alt="image" className="element-image" src={e.img}/>
-                            <p className="element-title"> {e.name} </p>
-                            <p className="element-description"> {e.description} </p>
-                        </a>
-                    </div>
+                    <Element id={e.id} img={e.img}/>
                 )}
 
             </div>

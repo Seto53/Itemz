@@ -16,25 +16,26 @@ import gif10 from '../docs/assets/collectibles/robot-nft-temp/unnamed (10).gif';
 import gif11 from '../docs/assets/collectibles/robot-nft-temp/unnamed (11).gif';
 import gif12 from '../docs/assets/collectibles/robot-nft-temp/unnamed (12).gif';
 import gif13 from '../docs/assets/collectibles/robot-nft-temp/unnamed (13).gif';
+import Element from './Element';
 
 export default function Explore() {
 
     //When integrated should come from database
     const collectibleCollection = [
-        {name: 'Name', description: 'Description', img: gif, id: '0'},
-        {name: 'Name', description: 'Description', img: gif1, id: '1'},
-        {name: 'Name', description: 'Description', img: gif2, id: '2'},
-        {name: 'Name', description: 'Description', img: gif3, id: '3'},
-        {name: 'Name', description: 'Description', img: gif4, id: '4'},
-        {name: 'Name', description: 'Description', img: gif5, id: '5'},
-        {name: 'Name', description: 'Description', img: gif6, id: '6'},
-        {name: 'Name', description: 'Description', img: gif7, id: '7'},
-        {name: 'Name', description: 'Description', img: gif8, id: '8'},
-        {name: 'Name', description: 'Description', img: gif9, id: '9'},
-        {name: 'Name', description: 'Description', img: gif10, id: '10'},
-        {name: 'Name', description: 'Description', img: gif11, id: '11'},
-        {name: 'Name', description: 'Description', img: gif12, id: '12'},
-        {name: 'Name', description: 'Description', img: gif13, id: '13'}
+        {img: gif, id: '0'},
+        {img: gif1, id: '1'},
+        {img: gif2, id: '2'},
+        {img: gif3, id: '3'},
+        {img: gif4, id: '4'},
+        {img: gif5, id: '5'},
+        {img: gif6, id: '6'},
+        {img: gif7, id: '7'},
+        {img: gif8, id: '8'},
+        {img: gif9, id: '9'},
+        {img: gif10, id: '10'},
+        {img: gif11, id: '11'},
+        {img: gif12, id: '12'},
+        {img: gif13, id: '13'}
     ]
 
     return (
@@ -47,14 +48,7 @@ export default function Explore() {
 
                 {collectibleCollection.map(e => {
                     return (
-                        <div className="element">
-                            <a href={`drop.html?id=${e.id}`}>
-                                <img alt="image" className="element-image"
-                                     src={e.img}/>
-                                    <p className="element-title"> {e.name} </p>
-                                    <p className="element-description"> {e.description} </p>
-                            </a>
-                        </div>
+                        <Element id={e.id} img={e.img}/>
                     )
                 })}
             </div>

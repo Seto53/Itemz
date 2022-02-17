@@ -5,7 +5,7 @@ import  '../docs/styles/button.css';
 import  '../docs/styles/hero.css';
 import  '../docs/styles/countdown.css';
 
-export default function CountDown({drop}) {
+export default function CountDown({drop, headline}) {
 
     const [theDrop, setTheDrop] = React.useState({id: '0', name: '', img: '', date: Date()})
 
@@ -38,15 +38,24 @@ export default function CountDown({drop}) {
     return (
         <div>
             <div className="drop-header">
-                <h1>Upcoming Drop</h1>
+                <h1>{headline}</h1>
             </div>
             <div className="container-countdown">
                 <div>
-                    <a href={`/drop?id=${theDrop.id}`}> <img alt={theDrop.name} className="drop"
-                                            src={theDrop.img}/></a>
+                    {theDrop.img ?
+                        <a href={`/drop?id=${theDrop.id}`}> <img alt={theDrop.name} className="drop"
+                                                                 src={theDrop.img}/></a>
+                        : <></>
+                    }
+
                 </div>
-                <h2>{theDrop.name}</h2>
-                <h1>Drops In</h1>
+                {
+                    theDrop.img ? <div>
+                        <h2>{theDrop.name}</h2>
+                        <h1>Drops In</h1>
+                    </div> : <></>
+                }
+
                 <div id="countdown">
                     <ul>
                         <li><span id="days"> {days.toString()}</span>days</li>

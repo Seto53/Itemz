@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <CountDown drop={newDrop}/>
+            <CountDown drop={newDrop} headline={"Upcoming Drop"}/>
             <div className="drop-header">
                 <h1>Recent Drops</h1>
             </div>

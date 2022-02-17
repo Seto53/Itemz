@@ -1,14 +1,8 @@
 import React from "react";
 import '../docs/styles/header.css';
 import '../docs/styles/root.css';
-import {Disclosure, Menu} from '@headlessui/react'
-import {BellIcon, MenuIcon, XIcon} from '@heroicons/react/outline'
-
-const navigation = [
-    {name: 'Home', href: './', current: false},
-    {name: 'Explore', href: './explore', current: false},
-    {name: 'Settings', href: './settings', current: false},
-]
+import {Disclosure, Menu} from '@headlessui/react';
+import {MenuIcon, XIcon} from '@heroicons/react/outline';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -39,7 +33,7 @@ export default function Header({element, navigation}) {
                                         </div>
                                         <div
                                             className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                                            <a href={'./'}>
+                                            <a href={'/'}>
                                                 <div className="flex-shrink-0 flex items-center">
                                                     <img
                                                         className="block lg:hidden h-10 w-auto"
@@ -84,14 +78,14 @@ export default function Header({element, navigation}) {
                                         </div>
                                         <div
                                             className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                            <a href="./settings"> <img alt="gold" className="tiny-profile-p"
+                                            <a href="/settings"> <img alt="gold" className="tiny-profile-p"
                                                                           src={require('../docs/assets/gold.png')}/>
                                             </a>
 
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="ml-3 relative">
                                                 <div>
-                                                    <a href={'./profile'}>
+                                                    <a href={'/profile'}>
                                                         <span className="sr-only">Open user menu</span>
                                                         <img
                                                             className="h-8 w-8 rounded-full"

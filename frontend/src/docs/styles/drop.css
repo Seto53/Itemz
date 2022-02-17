@@ -32,25 +32,37 @@
 .content .right-information{
     width: 40%;
     box-shadow: 5px 7px 10px 3px var(--light-secondary);
-    padding: 0 40px;
+    padding: 20px 40px;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content .left-information{
+    display: flex;
+    flex-direction: column;
+}
+
+.content .left-information img{
+    object-fit: cover;
 }
 
 .content .right-information .element-title{
-    font-size: xx-large;
-    font-weight: 600;
+font-size: xx-large;
+font-weight: 600;
 }
 
 #countdown ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style-type: none;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+list-style-type: none;
 }
 
 .left-information img{
-    height: 340px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 10px var(--light-secondary);
+height: 340px;
+border-radius: 20px;
+box-shadow: 3px 3px 10px var(--light-secondary);
 }
 
