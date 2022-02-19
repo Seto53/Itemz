@@ -119,7 +119,6 @@ input.w-button {
     line-height: 1.42857143;
     color: var(--text);
     vertical-align: middle;
-    background-color: transparent;
     border: 1px solid var(--main-color);
 }
 
