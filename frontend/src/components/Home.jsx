@@ -3,8 +3,10 @@ import '../docs/styles/root.css';
 import '../docs/styles/button.css';
 import '../docs/styles/hero.css';
 import '../docs/styles/countdown.css';
+import 'normalize.css';
+import '../docs/styles/carousel.css';
 import cover from '../docs/assets/cover.png';
-import element from '../docs/assets/collectibles/element.png';
+import element from '../docs/assets/collectibles/robot-nft-temp/unnamed (13).gif';
 import tempCollectible from '../docs/assets/temp-digital-collectibles.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CountDown from './CountDown';
@@ -29,7 +31,8 @@ export default function Home() {
                     <div className="col-lg-6">
                         <h1 className="display-5 fw-bold lh-1 mb-3">Discover, collect, and share your digital
                             collectibles</h1>
-                        <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap,
+                        <p className="lead font-sans">Quickly design and customize responsive mobile-first sites with
+                            Bootstrap,
                             the world’s
                             most popular front-end open source toolkit, featuring Sass variables and mixins, responsive
                             grid
@@ -50,7 +53,33 @@ export default function Home() {
             <div className="drop-header">
                 <h1>Recent Drops</h1>
             </div>
-            <p>*Carousel of past collectibles*</p>
+            <div className="carousel-container">
+                <div className="carousel-collectibles">
+                    <input defaultChecked="" id="item-1" name="slider" type="radio"/>
+                    <input id="item-2" name="slider" type="radio"/>
+                    <input id="item-3" name="slider" type="radio"/>
+                    <div className="cards-collectibles">
+                        <label className="card-collectible" htmlFor="item-1" id="drop-1">
+                            <img
+                                alt="Collectible 1"
+                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed.gif')}
+                            />
+                        </label>
+                        <label className="card-collectible" htmlFor="item-2" id="drop-2">
+                            <img
+                                alt="Collectible 2"
+                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed (2).gif')}
+                            />
+                        </label>
+                        <label className="card-collectible" htmlFor="item-3" id="drop-3">
+                            <img
+                                alt="Collectible 3"
+                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed (3).gif')}
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
         </main>
     );
 }
