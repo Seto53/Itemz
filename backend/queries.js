@@ -81,11 +81,12 @@ const getUserById = (request, response) => {
 const createUser = (request, response) => {
     const { token, picture, name, email } = request.body
 
-    pool.query('INSERT INTO "User" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, results) => {
+    pool.query('INSERT INTO "User" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, result) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`User added with ID: ${results}`)
+        console.log(result)
+        response.status(201).send(`User added`)
     })
 }
 
@@ -108,7 +109,7 @@ const updateUser = (request, response) => {
 const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('DELETE FROM "User" WHERE id = $1', [id], (error, results) => {
+    pool.query('DELETE FROM "User" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
