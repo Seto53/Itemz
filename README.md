@@ -74,7 +74,7 @@ To view the mockups it is necessary to run a http server.
 
 1) Have Node.js and NPM installed in your system.
 2) Run npm install in /backend and in /frontend.
-3) To run the Backend enter the /backend directory and run docker-compose up -d and then node main.js.
+3) To run the Backend enter the /backend directory and run 'docker-compose up -d' and then 'node main.js'.
 4) To run the Frontend enter the /frontend directory and run npm start.
 
 ### Design System

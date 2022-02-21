@@ -6,9 +6,60 @@ const pool = new Pool({
     password: process.env.PGPASSWORD,
     port: process.env.PGPORT
 })
+pool.connect((err, client, release) => {
+    if (err) {
+        return console.error('Error acquiring client', err.stack)
+    }
+    client.query('SELECT NOW()', (err, result) => {
+        release()
+        if (err) {
+            return console.error('Error executing query', err.stack)
+        }
+        console.log(result.rows)
+    })
+})
+
+pool.on('connect', client => {
+    client.query(`CREATE TABLE IF NOT EXISTS "User"(
+    "userID" SERIAL,
+    "token" text NOT NULL, 
+    "picture" text NOT NULL, 
+    "name" varchar(255) NOT NULL, 
+    "email" varchar(255) NOT NULL, 
+    "coins" float DEFAULT 0.00, 
+    PRIMARY KEY ("userID") 
+    );` , (err, res) => {
+        if(!err) console.log('User created')
+    });
+
+    client.query(`CREATE TABLE IF NOT EXISTS "Drop"(
+    "dropID" SERIAL,
+    "rarity" varchar(255) NOT NULL,
+    "asset" text NOT NULL,
+    "name" varchar(255) NOT NULL,
+    "series" varchar(255),
+    "description" text,
+    "price" float NOT NULL,
+    "count" integer NOT NULL,
+    "dropDate" timestamp NOT NULL,
+    PRIMARY KEY ("dropID")
+    );` , (err, res) => {
+        if(!err) console.log('Drop created')
+    });
+
+    client.query(`CREATE TABLE IF NOT EXISTS "Mint"(
+    "mintID" SERIAL,
+    "dropID" integer references "Drop"("dropID"),
+    "userID" integer references "User"("userID"),
+    PRIMARY KEY ("mintID")
+    );` , (err, res) => {
+        if(!err) console.log('Mint created')
+        else console.log(err)
+    });
+})
 
 const getUsers = (request, response) => {
-    pool.query('SELECT * FROM users ORDER BY id ASC', (error, results) => {
+    pool.query('SELECT * FROM "User" ORDER BY "userID" ASC', (error, results) => {
         if (error) {
             throw error
         }
@@ -19,7 +70,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM "User" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
@@ -28,13 +79,13 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-    const { name, email } = request.body
+    const { token, picture, name, email } = request.body
 
-    pool.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email], (error, results) => {
+    pool.query('INSERT INTO "User" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, results) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`User added with ID: ${result.insertId}`)
+        response.status(201).send(`User added with ID: ${results}`)
     })
 }
 
@@ -43,7 +94,7 @@ const updateUser = (request, response) => {
     const { name, email } = request.body
 
     pool.query(
-        'UPDATE users SET name = $1, email = $2 WHERE id = $3',
+        'UPDATE "User" SET name = $1, email = $2 WHERE "userID" = $3',
         [name, email, id],
         (error, results) => {
             if (error) {
@@ -57,7 +108,7 @@ const updateUser = (request, response) => {
 const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('DELETE FROM users WHERE id = $1', [id], (error, results) => {
+    pool.query('DELETE FROM "User" WHERE id = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
