@@ -70,12 +70,17 @@ The pdf version of this project outline can be found [HERE](https://github.com/p
 ```
 
 ### Set UP
-To view the mockups it is necessary to run a http server.
-
+#### Development
 1) Have Node.js and NPM installed in your system.
 2) Run npm install in /backend and in /frontend.
-3) To run the Backend enter the /backend directory and run 'docker-compose up -d' and then 'node main.js'.
-4) To run the Frontend enter the /frontend directory and run npm start.
+3) Run 'docker-compose up -d'
+4) To run the Backend enter the /backend directory and run 'node main.js'.
+5) To run the Frontend enter the /frontend directory and run 'npm start'.
+
+#### Productions
+Run 'docker-compose -f production.yml up'
+
+Accessing http://localhost will show you the latest version of the app.
 
 ### Design System
 
