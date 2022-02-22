@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../docs/styles/root.css';
 import '../docs/styles/button.css';
 import '../docs/styles/hero.css';
@@ -14,6 +14,11 @@ import CountDown from './CountDown';
 export default function Home() {
 
     const newDrop = {id: '1', name: 'Collectible Name', img: element, date: "Feb 20, 2022 23:46:25"};
+
+    useEffect(() => {
+        console.log(process.env.NODE_ENV)
+    }, []);
+
 
     return (
         <main>
