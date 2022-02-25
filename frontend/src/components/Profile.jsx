@@ -14,7 +14,8 @@ export default function Profile() {
     const [userinfo, setUserinfo] = React.useState({id: '1', name: 'Collectible Name', username: 'username', img: picture});
 
     React.useEffect( () => {
-        get('user/1').then(res => {
+        get('users/123').then(res => {
+            console.log(res);
             setUserinfo({name: res[0].name, username: res[0].email, id: res[0].id, img: picture})
         }).catch(e => {
             console.log(e)

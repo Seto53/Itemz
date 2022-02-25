@@ -20,7 +20,7 @@ pool.connect((err, client, release) => {
 })
 
 pool.on('connect', client => {
-    client.query(`CREATE TABLE IF NOT EXISTS "User"(
+    client.query(`CREATE TABLE IF NOT EXISTS "Users"(
     "userID" SERIAL,
     "token" text NOT NULL, 
     "picture" text NOT NULL, 
@@ -29,7 +29,7 @@ pool.on('connect', client => {
     "coins" float DEFAULT 0.00, 
     PRIMARY KEY ("userID") 
     );` , (err, res) => {
-        if(!err) console.log('User created')
+        if(!err) console.log('Users created')
     });
 
     client.query(`CREATE TABLE IF NOT EXISTS "Drop"(
@@ -50,7 +50,7 @@ pool.on('connect', client => {
     client.query(`CREATE TABLE IF NOT EXISTS "Mint"(
     "mintID" SERIAL,
     "dropID" integer references "Drop"("dropID"),
-    "userID" integer references "User"("userID"),
+    "userID" integer references "Users"("userID"),
     PRIMARY KEY ("mintID")
     );` , (err, res) => {
         if(!err) console.log('Mint created')
@@ -59,7 +59,7 @@ pool.on('connect', client => {
 })
 
 const getUsers = (request, response) => {
-    pool.query('SELECT * FROM "User" ORDER BY "userID" ASC', (error, results) => {
+    pool.query('SELECT * FROM "Users" ORDER BY "userID" ASC', (error, results) => {
         if (error) {
             throw error
         }
@@ -70,7 +70,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('SELECT * FROM "User" WHERE "userID" = $1', [id], (error, results) => {
+    pool.query('SELECT * FROM "Users" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
@@ -81,7 +81,7 @@ const getUserById = (request, response) => {
 const createUser = (request, response) => {
     const { token, picture, name, email } = request.body
 
-    pool.query('INSERT INTO "User" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, result) => {
+    pool.query('INSERT INTO "Users" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, result) => {
         if (error) {
             throw error
         }
@@ -95,7 +95,7 @@ const updateUser = (request, response) => {
     const { name, email } = request.body
 
     pool.query(
-        'UPDATE "User" SET name = $1, email = $2 WHERE "userID" = $3',
+        'UPDATE "Users" SET name = $1, email = $2 WHERE "userID" = $3',
         [name, email, id],
         (error, results) => {
             if (error) {
@@ -109,7 +109,7 @@ const updateUser = (request, response) => {
 const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('DELETE FROM "User" WHERE "userID" = $1', [id], (error, results) => {
+    pool.query('DELETE FROM "Users" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
             throw error
         }
