@@ -22,10 +22,10 @@ pool.connect((err, client, release) => {
 pool.on('connect', client => {
     client.query(`CREATE TABLE IF NOT EXISTS "Users"(
     "userID" SERIAL,
-    "token" text NOT NULL, 
     "picture" text NOT NULL, 
     "name" varchar(255) NOT NULL, 
-    "email" varchar(255) NOT NULL, 
+    "email" varchar(255) NOT NULL,
+    "password" text NOT NULL,  
     "coins" float DEFAULT 0.00, 
     PRIMARY KEY ("userID") 
     );` , (err, res) => {
@@ -79,9 +79,9 @@ const getUserById = (request, response) => {
 }
 
 const createUser = (request, response) => {
-    const { token, picture, name, email } = request.body
+    const { password, picture, name, email } = request.body
 
-    pool.query('INSERT INTO "Users" (token, picture, name, email) VALUES ($1, $2, $3, $4)', [token, picture, name, email], (error, result) => {
+    pool.query('INSERT INTO "Users" (password, picture, name, email) VALUES ($1, $2, $3, $4)', [password, picture, name, email], (error, result) => {
         if (error) {
             throw error
         }

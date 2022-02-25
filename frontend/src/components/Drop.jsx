@@ -13,7 +13,7 @@ export default function Drop({id}) {
         name: 'Collectible Name',
         description: "The whole long description....",
         img: element,
-        date: "Feb 20, 2022 23:46:25",
+        date: "Feb 26, 2022 23:46:25",
         price: 50,
         rarity: "Uncommon",
         amount: 1000,

@@ -15,7 +15,6 @@ export default function Profile() {
 
     React.useEffect( () => {
         get('users/123').then(res => {
-            console.log(res);
             setUserinfo({name: res[0].name, username: res[0].email, id: res[0].id, img: picture})
         }).catch(e => {
             console.log(e)
