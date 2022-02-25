@@ -3,7 +3,8 @@ version: "3"
 services:
   db:
     container_name: itemz-db
-    image: postgres:12
+    image: postgres
+    restart: always
     env_file:
       - backend/.env
     ports:
@@ -44,3 +45,13 @@ services:
       context: ./nginx
     ports:
       - '80:80'
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
