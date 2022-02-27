@@ -42,7 +42,7 @@ export default function Profile() {
 
             <div className="collection">
                 {collectibleCollection.map(e =>
-                    <Element id={e.id} img={e.img}/>
+                    <Element id={e.id}/>
                 )}
 
             </div>
