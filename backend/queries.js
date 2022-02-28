@@ -31,7 +31,25 @@ pool.on('connect', client => {
                       "coins"    float DEFAULT 0.00,
                       PRIMARY KEY ("userID")
                   );`, (err, res) => {
-        if (!err) console.log('Users created')
+        if (!err) {
+            console.log('Users created')
+            const sql = 'INSERT INTO "Users" ("userID", "picture","name","email","password","coins") VALUES %L';
+            const values = [
+                [1, "null", "John Doe", "jd@gmail.com", "password1234jd", 1234],
+                [2, "null", "Marc Sam", "ms@gmail.com", "password1234ms", 92],
+                [3, "null", "Alice John", "aj@gmail.com", "password1234aj", 200],
+                [4, "null", "Peter Parker", "pp@gmail.com", "password1234pp", 29],
+                [5, "null", "Sam Doe", "sd@gmail.com", "password1234sd", 1000000]
+            ];
+            client.query(format(sql, values), [], (error, results) => {
+                if (!error) {
+                    console.log("Users test data inserted")
+                    console.log(results.rows)
+                } else {
+                    console.log(error.message)
+                }
+            })
+        }
     });
 
     client.query(`CREATE TABLE IF NOT EXISTS "Drop"

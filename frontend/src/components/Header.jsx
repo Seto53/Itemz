@@ -105,64 +105,64 @@ export default function Header({element, navigation}) {
                                                     leaveTo="transform opacity-0 scale-95"
                                                 >
                                                     {/*if logged in*/}
-                                                    {/*<Menu.Items*/}
-                                                    {/*    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">*/}
-                                                    {/*    <Menu.Item>*/}
-                                                    {/*        {({active}) => (*/}
-                                                    {/*            <a*/}
-                                                    {/*                href="/Profile"*/}
-                                                    {/*                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}*/}
-                                                    {/*            >*/}
-                                                    {/*                Your Profile*/}
-                                                    {/*            </a>*/}
-                                                    {/*        )}*/}
-                                                    {/*    </Menu.Item>*/}
-                                                    {/*    <Menu.Item>*/}
-                                                    {/*        {({active}) => (*/}
-                                                    {/*            <a*/}
-                                                    {/*                href="/Settings"*/}
-                                                    {/*                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}*/}
-                                                    {/*            >*/}
-                                                    {/*                Settings*/}
-                                                    {/*            </a>*/}
-                                                    {/*        )}*/}
-                                                    {/*    </Menu.Item>*/}
-                                                    {/*    <Menu.Item>*/}
-                                                    {/*        {({active}) => (*/}
-                                                    {/*            <a*/}
-                                                    {/*                href="/"*/}
-                                                    {/*                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}*/}
-                                                    {/*            >*/}
-                                                    {/*                Sign out*/}
-                                                    {/*            </a>*/}
-                                                    {/*        )}*/}
-                                                    {/*    </Menu.Item>*/}
-                                                    {/*</Menu.Items>*/}
-
-                                                    {/*if not logged in*/}
                                                     <Menu.Items
                                                         className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                         <Menu.Item>
                                                             {({active}) => (
                                                                 <a
-                                                                    href="/Login"
+                                                                    href="/Profile"
                                                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                                 >
-                                                                    Login
+                                                                    Your Profile
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
                                                         <Menu.Item>
                                                             {({active}) => (
                                                                 <a
-                                                                    href="/Register"
+                                                                    href="/Settings"
                                                                     className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                                 >
-                                                                    Register
+                                                                    Settings
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                        <Menu.Item>
+                                                            {({active}) => (
+                                                                <a
+                                                                    href="/"
+                                                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                                >
+                                                                    Sign out
                                                                 </a>
                                                             )}
                                                         </Menu.Item>
                                                     </Menu.Items>
+
+                                                    {/*if not logged in*/}
+                                                    {/*<Menu.Items*/}
+                                                    {/*    className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">*/}
+                                                    {/*    <Menu.Item>*/}
+                                                    {/*        {({active}) => (*/}
+                                                    {/*            <a*/}
+                                                    {/*                href="/Login"*/}
+                                                    {/*                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}*/}
+                                                    {/*            >*/}
+                                                    {/*                Login*/}
+                                                    {/*            </a>*/}
+                                                    {/*        )}*/}
+                                                    {/*    </Menu.Item>*/}
+                                                    {/*    <Menu.Item>*/}
+                                                    {/*        {({active}) => (*/}
+                                                    {/*            <a*/}
+                                                    {/*                href="/Register"*/}
+                                                    {/*                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}*/}
+                                                    {/*            >*/}
+                                                    {/*                Register*/}
+                                                    {/*            </a>*/}
+                                                    {/*        )}*/}
+                                                    {/*    </Menu.Item>*/}
+                                                    {/*</Menu.Items>*/}
 
 
                                                 </Transition>
