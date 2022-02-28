@@ -6,14 +6,13 @@ import '../docs/styles/countdown.css';
 import 'normalize.css';
 import '../docs/styles/carousel.css';
 import cover from '../docs/assets/cover.png';
-import element from '../docs/assets/collectibles/robot-nft-temp/unnamed (13).gif';
 import tempCollectible from '../docs/assets/temp-digital-collectibles.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CountDown from './CountDown';
 
 export default function Home() {
 
-    const newDrop = {id: '1', name: 'Collectible Name', img: element, date: "Feb 20, 2022 23:46:25"};
+    const newDrop = {id: '1', name: 'Collectible Name', img: require('../docs/assets/collectibles/element.png'), date: "Feb 20, 2022 23:46:25"};
 
     useEffect(() => {
         console.log(process.env.NODE_ENV)
@@ -67,19 +66,19 @@ export default function Home() {
                         <label className="card-collectible" htmlFor="item-1" id="drop-1">
                             <img
                                 alt="Collectible 1"
-                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed.gif')}
+                                src={require('../docs/assets/collectibles/robot-nft-temp/robot (1).gif')}
                             />
                         </label>
                         <label className="card-collectible" htmlFor="item-2" id="drop-2">
                             <img
                                 alt="Collectible 2"
-                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed (2).gif')}
+                                src={require('../docs/assets/collectibles/robot-nft-temp/robot (2).gif')}
                             />
                         </label>
                         <label className="card-collectible" htmlFor="item-3" id="drop-3">
                             <img
                                 alt="Collectible 3"
-                                src={require('../docs/assets/collectibles/robot-nft-temp/unnamed (3).gif')}
+                                src={require('../docs/assets/collectibles/robot-nft-temp/robot (3).gif')}
                             />
                         </label>
                     </div>

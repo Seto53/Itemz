@@ -9,7 +9,7 @@ export default function CountDown({drop, headline}) {
 
     const [theDrop, setTheDrop] = React.useState({id: '0', name: '', img: '', date: Date()})
 
-    const countDownDate = new Date(theDrop.date).getTime();
+    const countDownDate = new Date(theDrop.dropDate).getTime();
 
     const [days, setDays] = React.useState(0);
     const [hours, setHours] = React.useState(0);

@@ -27,7 +27,7 @@ export default function Explore() {
             <div className="collection">
                 {dropIDS.map(e => {
                     return (
-                        <Element id={e["dropID"]}/>
+                        <Element id={e["dropID"]} name={e["name"]} description={e["description"]} rarity={e["rarity"]}/>
                     )
                 })}
             </div>
