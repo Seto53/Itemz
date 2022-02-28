@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import '../docs/styles/root.css';
 import '../docs/styles/element.css';
 import '../docs/styles/drop.css';
@@ -10,6 +10,7 @@ import {useParams} from "react-router-dom";
 export default function Drop() {
 
     const {id} = useParams()
+    const [dropped, setDropped] = useState(false);
 
     const [dropInfo, setDropInfo] = React.useState({
         dropID: id,
@@ -36,6 +37,11 @@ export default function Drop() {
                 count: res[0].count,
                 series: res[0].series
             })
+            if (new Date(dropInfo.dropDate).getTime() - new Date().getTime() < 0) {
+                setDropped(true)
+            } else {
+                setDropped(false)
+            }
         }).catch(e => {
             console.log(e)
         })
