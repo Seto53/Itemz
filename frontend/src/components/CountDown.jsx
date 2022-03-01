@@ -27,7 +27,6 @@ export default function CountDown({drop, headline}) {
         const interval = setInterval(() => {
             const now = new Date().getTime();
             const distance = countDownDate - now;
-
             setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
             setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
             setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));

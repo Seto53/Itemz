@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import '../docs/styles/root.css';
 import '../docs/styles/element.css';
 import '../docs/styles/drop.css';
@@ -10,7 +10,7 @@ import {useParams} from "react-router-dom";
 export default function Drop() {
 
     const {id} = useParams()
-    const [dropped, setDropped] = useState(false);
+    const [count, setCount] = useState({count: 0});
 
     const [dropInfo, setDropInfo] = React.useState({
         dropID: id,
@@ -20,7 +20,6 @@ export default function Drop() {
         dropDate: "Feb 26, 2022 23:46:25",
         price: 50,
         rarity: "Uncommon",
-        amount: 1000,
         series: "Series"
     });
 
@@ -34,17 +33,30 @@ export default function Drop() {
                 dropDate: res[0].dropDate,
                 price: res[0].price,
                 rarity: res[0].rarity,
-                count: res[0].count,
                 series: res[0].series
             })
-            if (new Date(dropInfo.dropDate).getTime() - new Date().getTime() < 0) {
-                setDropped(true)
-            } else {
-                setDropped(false)
-            }
+            setCount({count: res[0].count})
         }).catch(e => {
             console.log(e)
         })
+    }, [])
+
+    useEffect(() => {
+        function getSold() {
+            get('drops/' + id + '/count').then(res => {
+                setCount({
+                    count: res[0].count
+                })
+            }).catch(e => {
+                console.log(e)
+            })
+        }
+
+        getSold()
+        const interval = setInterval(() => getSold(), 1000)
+        return () => {
+            clearInterval(interval);
+        }
     }, [])
 
     return (
@@ -66,11 +78,17 @@ export default function Drop() {
                     <li> Series: <span className="element-sub-username"> {dropInfo.series} </span></li>
                     <li> Price: <span className="element-sub-username"> {dropInfo.price} Gold </span></li>
                     <li> Rarity Rank: <span className="element-sub-username"> {dropInfo.rarity} </span></li>
-                    <li> Editions: <span className="element-sub-username"> {dropInfo.count} Left </span></li>
+                    <li> Editions: <span className="element-sub-username"> {count.count} Left </span></li>
                 </ul>
-                <div className="button">
-                    <p> Buy Collectible Now! </p>
-                </div>
+                {count.count > 0 ?
+                    <button className="button">
+                        <p> Buy Collectible Now! </p>
+                    </button>
+                    : <div className="button">
+                        <p> Sold Out </p>
+                    </div>
+                }
+
             </div>
         </div>
     );
