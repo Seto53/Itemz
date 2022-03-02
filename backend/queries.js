@@ -118,7 +118,7 @@ const getUsers = (request, response) => {
 
 const getUserById = (request, response) => {
     const id = parseInt(request.params.id)
-
+    if (isNaN(id)) return
     pool.query('SELECT * FROM "Users" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
             throw error
@@ -141,6 +141,7 @@ const createUser = (request, response) => {
 
 const updateUser = (request, response) => {
     const id = parseInt(request.params.id)
+    if (isNaN(id)) return
     const {name, email} = request.body
 
     pool.query(
@@ -157,6 +158,7 @@ const updateUser = (request, response) => {
 
 const deleteUser = (request, response) => {
     const id = parseInt(request.params.id)
+    if (isNaN(id)) return
 
     pool.query('DELETE FROM "Users" WHERE "userID" = $1', [id], (error, results) => {
         if (error) {
@@ -177,6 +179,7 @@ const getDrops = (request, response) => {
 
 const getDropById = (request, response) => {
     const id = parseInt(request.params.id)
+    if (isNaN(id)) return
 
     pool.query('SELECT * FROM "Drop" WHERE "dropID" = $1', [id], (error, results) => {
         if (error) {
@@ -188,6 +191,7 @@ const getDropById = (request, response) => {
 
 const getDropCount = (request, response) => {
     const id = parseInt(request.params.id)
+    if (isNaN(id)) return
 
     pool.query('SELECT count FROM "Drop" WHERE "dropID" = $1', [id], (error, results) => {
         if (error) {
@@ -197,6 +201,14 @@ const getDropCount = (request, response) => {
     })
 }
 
+const getUpcomingDrop = (request, response) => {
+    pool.query('SELECT * from "Drop" order by abs(extract(epoch from ("Drop"."dropDate" - CURRENT_TIMESTAMP))) limit 1', (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
 
 module.exports = {
     getUsers,
@@ -206,5 +218,6 @@ module.exports = {
     deleteUser,
     getDrops,
     getDropById,
-    getDropCount
+    getDropCount,
+    getUpcomingDrop
 }

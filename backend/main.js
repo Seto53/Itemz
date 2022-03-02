@@ -30,6 +30,7 @@ app.delete('/users/:id', db.deleteUser)
 app.get('/drops', db.getDrops)
 app.get('/drops/:id', db.getDropById)
 app.get('/drops/:id/count', db.getDropCount)
+app.get('/upcoming-drop', db.getUpcomingDrop)
 
 app.listen(port, () => {
     console.log(`App running on port ${port}.`)

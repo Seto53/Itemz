@@ -88,7 +88,6 @@ export default function Drop() {
                         <p> Sold Out </p>
                     </div>
                 }
-
             </div>
         </div>
     );

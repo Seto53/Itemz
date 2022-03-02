@@ -9,15 +9,33 @@ import cover from '../docs/assets/cover.png';
 import tempCollectible from '../docs/assets/temp-digital-collectibles.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CountDown from './CountDown';
+import {get} from "./http";
 
 export default function Home() {
 
-    const newDrop = {id: '1', name: 'Collectible Name', img: require('../docs/assets/collectibles/element.png'), date: "Feb 20, 2022 23:46:25"};
+    const [upcomingDrop, setUpcomingDrop] = React.useState({
+        dropID: 0,
+        name: '',
+        asset: '',
+        dropDate: Date()
+    })
+
+    useEffect(() => {
+        get('upcoming-drop').then(res => {
+            setUpcomingDrop({
+                dropID: res[0].dropID,
+                name: res[0].name,
+                asset: require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(res[0].dropID)}).gif`),
+                dropDate: res[0].dropDate
+            })
+        }).catch(e => {
+            console.log(e)
+        })
+    }, []);
 
     useEffect(() => {
         console.log(process.env.NODE_ENV)
     }, []);
-
 
     return (
         <main>
@@ -53,7 +71,8 @@ export default function Home() {
                 </div>
             </div>
 
-            <CountDown drop={newDrop} headline={"Upcoming Drop"}/>
+            <CountDown drop={upcomingDrop} headline={"Upcoming Drop"}/>
+
             <div className="drop-header">
                 <h1>Recent Drops</h1>
             </div>

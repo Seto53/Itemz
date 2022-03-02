@@ -7,7 +7,8 @@ import '../docs/styles/countdown.css';
 
 export default function CountDown({drop, headline}) {
 
-    const [theDrop, setTheDrop] = React.useState({id: '0', name: '', img: '', dropDate: Date()})
+    const [theDrop, setTheDrop] = React.useState(drop)
+
     const [dropped, setDropped] = useState(false);
 
     const countDownDate = new Date(theDrop.dropDate).getTime();
@@ -37,9 +38,7 @@ export default function CountDown({drop, headline}) {
     }, [theDrop]);
 
     useEffect(() => {
-        if (drop) {
-            setTheDrop(drop)
-        }
+        setTheDrop(drop)
     }, [drop])
 
     return (
@@ -51,15 +50,15 @@ export default function CountDown({drop, headline}) {
                 : null}
             <div className="container-countdown">
                 <div>
-                    {theDrop.img ?
-                        <a href={`/drop?id=${theDrop.id}`}> <img alt={theDrop.name} className="drop"
-                                                                 src={theDrop.img}/></a>
+                    {theDrop.asset ?
+                        <a href={`/drop/${theDrop.dropID}`}> <img alt={theDrop.name} className="drop"
+                                                                     src={theDrop.asset}/></a>
                         : <></>
                     }
 
                 </div>
                 {
-                    theDrop.img ? <div>
+                    theDrop.asset ? <div>
                         <h2>{theDrop.name}</h2>
                         <h1>Drops In</h1>
                     </div> : <></>
