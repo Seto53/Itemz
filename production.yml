@@ -17,7 +17,7 @@ services:
   node:
     container_name: itemz-back
     env_file:
-      - backend/.env
+      - backend/.env.prod
     build:
       dockerfile: Dockerfile
       context: backend

@@ -22,13 +22,13 @@ export default function Profile() {
     }, [])
 
     const collectibleCollection = [
-        {img: element, id: '1'},
-        {img: element, id: '2'},
-        {img: element, id: '3'},
-        {img: element, id: '4'},
-        {img: element, id: '5'},
-        {img: element, id: '6'},
-        {img: element, id: '7'}
+        {img: element, id: '1', name: 'Collectible 1', description: 'This is a collectible description'},
+        {img: element, id: '2', name: 'Collectible 2', description: 'This is a collectible description'},
+        {img: element, id: '3', name: 'Collectible 3', description: 'This is a collectible description'},
+        {img: element, id: '4', name: 'Collectible 4', description: 'This is a collectible description'},
+        {img: element, id: '5', name: 'Collectible 5', description: 'This is a collectible description'},
+        {img: element, id: '6', name: 'Collectible 6', description: 'This is a collectible description'},
+        {img: element, id: '7', name: 'Collectible 7', description: 'This is a collectible description'}
     ]
 
     return (
@@ -42,7 +42,7 @@ export default function Profile() {
 
             <div className="collection">
                 {collectibleCollection.map(e =>
-                    <Element id={e.id}/>
+                    <Element id={e.id} name={e.name} description={e.description}/>
                 )}
 
             </div>
