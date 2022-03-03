@@ -70,6 +70,7 @@ The pdf version of this project outline can be found [HERE](https://github.com/p
 ```
 
 ### Set UP
+IT IS ABSOLUTLY NECESSARY TO HAVE ACCESS TO THE .env AND .env.prod FILES TO RUN THE APPLICATION.
 #### Development
 1) Have Node.js and NPM installed in your system.
 2) Run npm install in /backend and in /frontend.
