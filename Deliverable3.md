@@ -5,11 +5,13 @@ This project uses Node.js as the back-end API.
 As per now, we have some queries to access and update the user table.
 
 ## Database Technology
-A docker container is used to host a Postgres database that stores information about aur users and collectibles.
+A docker container is used to host a Postgres database that stores information about our users and collectibles.
 
 ## Automated tests
 To test Node.js we are using Mocha. 
 Currently, we only have dummy tests to make sure that the library is properly integrated.
+
+To test React.js we use React's testing library. Currently, we only have dummy tests to make sure that the library is properly integrated.
 
 ## Deployment
 We have 2 different docker-compose scripts. The default one (docker-compose.yml) only builds a container for the database and requires you to run the backend and frontend to be able to use the application for development.
