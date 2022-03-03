@@ -19,6 +19,8 @@ Then we also have a production.yml, if this file is executed the whole applicati
 
 The full set up instructions can be found in [README.md](./README.md) under the 'Set up' title.
 
+IT IS ABSOLUTLY NECESSARY TO HAVE ACCESS TO THE .env AND .env.prod FILES TO RUN THE APPLICATION.
+
 ## Frontend
 This project uses a React.js application as the frontend.
 If the database has a user in it, one would be able to see some of this user's information in the profile tab.
