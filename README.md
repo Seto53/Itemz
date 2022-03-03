@@ -77,7 +77,7 @@ The pdf version of this project outline can be found [HERE](https://github.com/p
 4) To run the Backend enter the /backend directory and run 'node main.js'.
 5) To run the Frontend enter the /frontend directory and run 'npm start'.
 
-#### Productions
+#### Production
 Run 'docker-compose -f production.yml up'
 
 Accessing http://localhost will show you the latest version of the app.
@@ -100,3 +100,6 @@ All our images are located in [/docs/assets](https://github.com/professor-forwar
 There are some default images that would be inputted for particular collectibles as well as official images like the logo.
 
 We are using Font Awesome icon family.
+
+## Deliverable 3
+To access every detail on the updates for this deliverable [click here](./Deliverable3.md)
