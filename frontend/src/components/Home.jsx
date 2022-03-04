@@ -17,7 +17,8 @@ export default function Home() {
         dropID: 0,
         name: '',
         asset: '',
-        dropDate: Date()
+        dropDate: Date(),
+        rarity: "Common"
     })
 
     const [pastDrops, setPastDrops] = useState({drop1: 1, drop2: 1, drop3: 1})
@@ -30,7 +31,8 @@ export default function Home() {
                 dropID: res[0].dropID,
                 name: res[0].name,
                 asset: require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(res[0].dropID)}).gif`),
-                dropDate: res[0].dropDate
+                dropDate: res[0].dropDate,
+                rarity: res[0].rarity
             })
             if (res[0].dropID <= 3) {
                 console.log("Cannot render past drops")

@@ -41,6 +41,23 @@ export default function CountDown({drop, headline}) {
         setTheDrop(drop)
     }, [drop])
 
+    function setColor() {
+        switch (theDrop.rarity) {
+            case "Common":
+                return "#0de79a"
+            case "Uncommon":
+                return "#10c7f5"
+            case "Rare":
+                return "#f38a35"
+            case "Epic":
+                return "#8717e7"
+            case "Legendary":
+                return "#f3c22c"
+            default:
+                console.log("Unknown rarity " + theDrop.rarity)
+        }
+    }
+
     return (
         <div>
             {!dropped ?
@@ -52,7 +69,7 @@ export default function CountDown({drop, headline}) {
                 <div>
                     {theDrop.asset ?
                         <a href={`/drop/${theDrop.dropID}`}> <img alt={theDrop.name} className="drop"
-                                                                     src={theDrop.asset}/></a>
+                                                                  src={theDrop.asset} style={{color: setColor()}}/></a>
                         : <></>
                     }
 
