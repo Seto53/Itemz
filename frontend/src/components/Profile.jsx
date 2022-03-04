@@ -35,7 +35,7 @@ export default function Profile() {
         <main>
             <div className="profile-header">
                 <img alt="cover" className="cover" src={cover}/>
-                <img alt="profile-picture" className="profile-p" src={userinfo.img}/>
+                <img alt="profile" className="profile-p" src={userinfo.img}/>
                 <p className="username"> {userinfo.username} </p>
                 <p className="sub-username"> some info of collection </p>
             </div>
