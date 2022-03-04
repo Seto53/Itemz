@@ -1,0 +1,18 @@
+.collection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));;
+    padding: 50px 100px 50px 100px;
+    box-shadow: inset 0 7px 10px -3px var(--light-secondary);
+    justify-items: center;
+}
+
+.explore-header{
+    font-size: 2rem;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text);
+}

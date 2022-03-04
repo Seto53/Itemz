@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drop</title>
+    <link rel="stylesheet" href="styles/element.css">
+    <link rel="stylesheet" href="styles/drop.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+
+    <!--    script for loading header-->
+    <script
+            crossorigin="anonymous"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/1521e42fd4.js" crossorigin="anonymous"></script>
+    <script src="scripts/countdown.js" type="text/javascript"></script>
+
+    <div id="header"></div>
+
+    <div class="content">
+        <div class="left-information">
+            <img src="assets/collectibles/element.png" alt="element img">
+            <h4> Description </h4>
+            <p> The whole long description.... </p>
+
+        </div>
+        <div class="right-information">
+            <p class="element-title"> Name of Collectible </p>
+            <h4> Details </h4>
+            <ul>
+                <li> Series: <span class="element-sub-username"> Series </span></li>
+                <li> Price: <span class="element-sub-username"> 50 Gold </span></li>
+                <li> Rarity Rank: <span class="element-sub-username"> Uncommon </span></li>
+                <li> Editions: <span class="element-sub-username"> 1000 Left </span></li>
+            </ul>
+            <div class="container-countdown">
+
+                <h4 id="headline">Drops In</h4>
+                <div id="countdown">
+                    <ul>
+                        <li><span id="days"></span> days</li>
+                        <li><span id="hours"></span> Hours</li>
+                        <li><span id="minutes"></span> Minutes</li>
+                        <li><span id="seconds"></span> Seconds</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button">
+                <p> Buy Collectible Now! </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
