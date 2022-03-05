@@ -69,20 +69,20 @@ pool.on('connect', client => {
             console.log('Drop created')
             const sql = 'INSERT INTO "Drop" ("dropID", rarity, asset, name, series, description, price, count, "dropDate") VALUES %L';
             const values = [
-                [1, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed.gif"', 'Robot 1', 'Robots', 'Robot #1 Description', 50, 10, '"2022-02-27", "11:00:00"'],
-                [2, 'Uncommon', '"../docs/assets/collectibles/robot-nft-temp/unnamed (1).gif"', 'Robot 2', 'Robots', 'Robot #2 Description', 50, 7, '"2022-02-28", "11:00:00"'],
-                [3, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed (2).gif"', 'Robot 3', 'Robots', 'Robot #3 Description', 50, 10, '"2022-03-01", "11:00:00"'],
-                [4, 'Rare', '"../docs/assets/collectibles/robot-nft-temp/unnamed (3).gif"', 'Robot 4', 'Robots', 'Robot #4 Description', 70, 5, '"2022-03-01", "15:00:00"'],
-                [5, 'Uncommon', '"../docs/assets/collectibles/robot-nft-temp/unnamed (4).gif"', 'Robot 5', 'Robots', 'Robot #5 Description', 50, 7, '"2022-03-02", "11:00:00"'],
-                [6, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed (5).gif"', 'Robot 6', 'Robots', 'Robot #6 Description', 50, 10, '"2022-03-03", "11:00:00"'],
-                [7, 'Uncommon', '"../docs/assets/collectibles/robot-nft-temp/unnamed (6).gif"', 'Robot 7', 'Robots', 'Robot #7 Description', 50, 7, '"2022-03-04", "11:00:00"'],
-                [8, 'Epic', '"../docs/assets/collectibles/robot-nft-temp/unnamed (7).gif"', 'Robot 8', 'Robots', 'Robot #8 Description', 100, 3, '"2022-03-05", "11:00:00"'],
-                [9, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed (8).gif"', 'Robot 9', 'Robots', 'Robot #9 Description', 50, 10, '"2022-03-06", "11:00:00"'],
-                [10, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed (9).gif"', 'Robot 10', 'Robots', 'Robot #10 Description', 50, 10, '"2022-03-07", "11:00:00"'],
-                [11, 'Rare', '"../docs/assets/collectibles/robot-nft-temp/unnamed (10).gif"', 'Robot 11', 'Robots', 'Robot #11 Description', 70, 5, '"2022-03-08", "11:00:00"'],
-                [12, 'Common', '"../docs/assets/collectibles/robot-nft-temp/unnamed (11).gif"', 'Robot 12', 'Robots', 'Robot #12 Description', 50, 10, '"2022-03-09", "11:00:00"'],
-                [13, 'Uncommon', '"../docs/assets/collectibles/robot-nft-temp/unnamed (12).gif"', 'Robot 13', 'Robots', 'Robot #13 Description', 50, 7, '"2022-03-10", "11:00:00"'],
-                [14, 'Legendary', '"../docs/assets/collectibles/robot-nft-temp/unnamed (13).gif"', 'Robot 14', 'Robots', 'Robot #14 Description', 500, 1, '"2022-03-15", "11:00:00"']
+                [1, 'Common', 'robot (1).gif', 'Robot 1', 'Robots', 'Robot #1 Description', 50, 10, '"2022-02-27", "11:00:00"'],
+                [2, 'Uncommon', 'robot (2).gif', 'Robot 2', 'Robots', 'Robot #2 Description', 50, 7, '"2022-02-28", "11:00:00"'],
+                [3, 'Common', 'robot (3).gif', 'Robot 3', 'Robots', 'Robot #3 Description', 50, 10, '"2022-03-01", "11:00:00"'],
+                [4, 'Rare', 'robot (4).gif', 'Robot 4', 'Robots', 'Robot #4 Description', 70, 5, '"2022-03-01", "15:00:00"'],
+                [5, 'Uncommon', 'robot (5).gif', 'Robot 5', 'Robots', 'Robot #5 Description', 50, 7, '"2022-03-02", "11:00:00"'],
+                [6, 'Common', 'robot (6).gif', 'Robot 6', 'Robots', 'Robot #6 Description', 50, 10, '"2022-03-03", "11:00:00"'],
+                [7, 'Uncommon', 'robot (7).gif', 'Robot 7', 'Robots', 'Robot #7 Description', 50, 7, '"2022-03-04", "11:00:00"'],
+                [8, 'Epic', 'robot (8).gif', 'Robot 8', 'Robots', 'Robot #8 Description', 100, 3, '"2022-03-05", "11:00:00"'],
+                [9, 'Common', 'robot (9).gif', 'Robot 9', 'Robots', 'Robot #9 Description', 50, 10, '"2022-03-06", "11:00:00"'],
+                [10, 'Common', 'robot (10).gif', 'Robot 10', 'Robots', 'Robot #10 Description', 50, 10, '"2022-03-07", "11:00:00"'],
+                [11, 'Rare', 'robot (11).gif', 'Robot 11', 'Robots', 'Robot #11 Description', 70, 5, '"2022-03-08", "11:00:00"'],
+                [12, 'Common', 'robot (12).gif', 'Robot 12', 'Robots', 'Robot #12 Description', 50, 10, '"2022-03-09", "11:00:00"'],
+                [13, 'Uncommon', 'robot (13).gif', 'Robot 13', 'Robots', 'Robot #13 Description', 50, 7, '"2022-03-10", "11:00:00"'],
+                [14, 'Legendary', 'robot (14).gif', 'Robot 14', 'Robots', 'Robot #14 Description', 500, 1, '"2022-03-15", "11:00:00"']
             ];
             client.query(format(sql, values), [], (error, results) => {
                 if (!error) {

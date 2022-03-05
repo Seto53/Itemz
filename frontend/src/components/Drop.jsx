@@ -29,7 +29,7 @@ export default function Drop() {
                 dropID: res[0].dropID,
                 name: res[0].name,
                 description: res[0].description,
-                asset: require(`../docs/assets/collectibles/robot-nft-temp/robot (${id}).gif`),
+                asset: require(`../docs/assets/collectibles/robot-nft-temp/${res[0].asset}`),
                 dropDate: res[0].dropDate,
                 price: res[0].price,
                 rarity: res[0].rarity,

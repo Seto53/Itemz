@@ -1,7 +1,7 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import '../docs/styles/header.css';
 import '../docs/styles/root.css';
-import {Disclosure, Menu, Transition} from '@headlessui/react'
+import {Dialog, Disclosure, Menu, Transition} from '@headlessui/react'
 import {MenuIcon, XIcon} from '@heroicons/react/outline'
 
 function classNames(...classes) {
@@ -9,6 +9,18 @@ function classNames(...classes) {
 }
 
 export default function Header({element, navigation}) {
+
+    let [isOpen, setIsOpen] = useState(false)
+
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        console.log("clicked")
+        setIsOpen(true)
+    }
+
     return (
         <div>
             <header className="App-header">
@@ -78,9 +90,9 @@ export default function Header({element, navigation}) {
                                         </div>
                                         <div
                                             className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                            <a href="/Profile"> <img alt="gold" className="tiny-profile-p"
-                                                                     src={require('../docs/assets/gold.png')}/>
-                                            </a>
+                                            <button><img alt="gold" className="tiny-profile-p"
+                                                         src={require('../docs/assets/gold.png')} onClick={openModal}/></button>
+
 
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="ml-3 relative">
@@ -196,6 +208,80 @@ export default function Header({element, navigation}) {
                 </div>
             </header>
             {element}
+            <Transition appear show={isOpen} as={Fragment}>
+                <Dialog
+                    as="div"
+                    className="fixed inset-0 z-10 overflow-y-auto"
+                    onClose={closeModal}
+                >
+                    <div className="min-h-screen px-4 text-center">
+                        <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <Dialog.Overlay className="fixed inset-0"/>
+                        </Transition.Child>
+
+                        {/* This element is to trick the browser into centering the modal contents. */}
+                        <span
+                            className="inline-block h-screen align-middle"
+                            aria-hidden="true"
+                        >
+              &#8203;
+            </span>
+                        <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                        >
+                            <div
+                                className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                                <Dialog.Title
+                                    as="h3"
+                                    className="text-lg font-medium leading-6 text-gray-900"
+                                >
+                                    Buy Gold
+                                </Dialog.Title>
+                                <div className="mt-2">
+                                    <label htmlFor="goldBuyCount" className="text-sm text-gray-500">
+                                        Please enter the amount to purchase:
+                                    </label>&nbsp;
+                                    <input type="number" id="goldBuyCount" name="goldBuyCount" min="5" max="100000"
+                                           style={{height: "30px", width: "90px", borderRadius: "10px"}}/>
+                                </div>
+
+                                <div className="mt-4">
+                                    <button
+                                        type="button"
+                                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-400 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                                        onClick={closeModal}
+                                    >
+                                        Buy
+                                    </button>
+                                    &nbsp;
+                                    <button
+                                        type="button"
+                                        className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                                        onClick={closeModal}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </Transition.Child>
+                    </div>
+                </Dialog>
+            </Transition>
         </div>
+
     );
 }

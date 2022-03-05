@@ -16,12 +16,16 @@ export default function Home() {
     const [upcomingDrop, setUpcomingDrop] = React.useState({
         dropID: 0,
         name: '',
-        asset: '',
+        asset: 'robot (1).gif',
         dropDate: Date(),
         rarity: "Common"
     })
 
-    const [pastDrops, setPastDrops] = useState({drop1: 1, drop2: 1, drop3: 1})
+    const [pastDrops, setPastDrops] = useState([
+        {dropID: 1, asset: 'robot (1).gif'},
+        {dropID: 1, asset: 'robot (1).gif'},
+        {dropID: 1, asset: 'robot (1).gif'}
+    ])
 
     const dropsChecked = [true, false, false]
 
@@ -30,7 +34,7 @@ export default function Home() {
             setUpcomingDrop({
                 dropID: res[0].dropID,
                 name: res[0].name,
-                asset: require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(res[0].dropID)}).gif`),
+                asset: require(`../docs/assets/collectibles/robot-nft-temp/${res[0].asset}`),
                 dropDate: res[0].dropDate,
                 rarity: res[0].rarity
             })
@@ -38,11 +42,11 @@ export default function Home() {
                 console.log("Cannot render past drops")
             } else {
                 get('drops').then(res2 => {
-                    setPastDrops({
-                        drop1: res2[res[0].dropID - 4].dropID,
-                        drop2: res2[res[0].dropID - 3].dropID,
-                        drop3: res2[res[0].dropID - 2].dropID
-                    })
+                    setPastDrops([
+                        {dropID: res2[res[0].dropID - 4].dropID, asset: res2[res[0].dropID - 4].asset},
+                        {dropID: res2[res[0].dropID - 3].dropID, asset: res2[res[0].dropID - 3].asset},
+                        {dropID: res2[res[0].dropID - 2].dropID, asset: res2[res[0].dropID - 2].asset}
+                    ])
                 }).catch(e => {
                     console.log(e)
                 })
@@ -55,19 +59,7 @@ export default function Home() {
     function handleClick(num) {
         if (dropsChecked[num - 1] === true) {
             //TODO opens another tab
-            switch (num){
-                case 1:
-                    console.log(pastDrops.drop1)
-                    window.open(`/drop/${pastDrops.drop1}`);
-                    break;
-                case 2:
-                    window.open(`/drop/${pastDrops.drop2}`);
-                    break;
-                case 3:
-                    window.open(`/drop/${pastDrops.drop3}`);
-                    break;
-            }
-
+            window.open(`/drop/${pastDrops[num - 1].dropID}`);
         } else {
             dropsChecked.fill(false)
             dropsChecked[num - 1] = true
@@ -79,7 +71,6 @@ export default function Home() {
             <div className="home-header">
                 <img alt="cover" className="cover" src={cover}/>
             </div>
-
             <div className="container col-xxl-8 px-4 py-5">
                 <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div className="col-10 col-sm-8 col-lg-6">
@@ -123,19 +114,19 @@ export default function Home() {
                         <label className="card-collectible" htmlFor="item-1" id="drop-1">
                             <img
                                 alt="Collectible 1"
-                                src={require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(pastDrops.drop1)}).gif`)}
+                                src={require(`../docs/assets/collectibles/robot-nft-temp/${pastDrops[0].asset}`)}
                             />
                         </label>
                         <label className="card-collectible" htmlFor="item-2" id="drop-2">
                             <img
                                 alt="Collectible 2"
-                                src={require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(pastDrops.drop2)}).gif`)}
+                                src={require(`../docs/assets/collectibles/robot-nft-temp/${pastDrops[1].asset}`)}
                             />
                         </label>
                         <label className="card-collectible" htmlFor="item-3" id="drop-3">
                             <img
                                 alt="Collectible 3"
-                                src={require(`../docs/assets/collectibles/robot-nft-temp/robot (${parseInt(pastDrops.drop3)}).gif`)}
+                                src={require(`../docs/assets/collectibles/robot-nft-temp/${pastDrops[2].asset}`)}
                             />
                         </label>
                     </div>
