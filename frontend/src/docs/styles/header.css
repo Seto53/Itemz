@@ -6,17 +6,13 @@ body {
 header {
     width: 100%;
     background-color: var(--light-secondary);
-    height: 70px;
     position: fixed;
     top: 0;
 }
 
-header .header-class {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 2%;
-    height: 100%;
-    align-items: center;
+header a{
+    text-decoration: none;
+    color: var(--text);
 }
 
 header .header-options {
@@ -25,6 +21,10 @@ header .header-options {
     width: 30%;
     height: 100%;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 header .header-options a {
@@ -63,11 +63,11 @@ header .search-3 {
 }
 
 .navigation-container {
-    width: 100%;
+    width: 60%;
     margin-right: auto;
     margin-left: 0;
     -webkit-justify-content: space-between;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .w-container {
@@ -90,7 +90,8 @@ header .search-3 {
 }
 
 .search-input-2 {
-    margin: 0 30px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 7px;
     font-size: 1rem;
     border: none;
@@ -116,31 +117,30 @@ input.w-button {
     padding: 8px 12px;
     font-size: 1rem;
     line-height: 1.42857143;
-    color: #333;
+    color: var(--text);
     vertical-align: middle;
-    background-color: var(--light-secondary);
-    border: 1px solid #ccc
+    border: 1px solid var(--main-color);
 }
 
 .w-input:-moz-placeholder {
-    color: #999
+    color: #8d8c8c;
 }
 
 .w-input::-moz-placeholder {
-    color: #999;
+    color: #8d8c8c;
     opacity: 1
 }
 
 .w-input:-ms-input-placeholder {
-    color: #999
+    color: #8d8c8c;
 }
 
 .w-input::-webkit-input-placeholder {
-    color: #999
+    color: #8d8c8c
 }
 
 .w-input:focus {
-    border-color: #3898ec;
+    border-color: var(--main-color);
     outline: 0
 }
 
@@ -185,7 +185,7 @@ input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-se
     color: var(--text);
 }
 
-.nolog{
+.nolog {
     width: 10% !important;
 }
 

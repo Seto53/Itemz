@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+  db:
+    container_name: itemz-db
+    image: postgres
+    restart: always
+    env_file:
+      - backend/.env
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: itemz-db
+
+  node:
+    container_name: itemz-back
+    env_file:
+      - backend/.env.prod
+    build:
+      dockerfile: Dockerfile
+      context: backend
+    ports:
+      - '3001:3001'
+    depends_on:
+      - db
+
+  react:
+    container_name: itemz-front
+    build:
+      dockerfile: Dockerfile
+      context: frontend
+    ports:
+      - '3000:80'
+
+  nginx:
+    container_name: itemz-nginx
+    depends_on:
+      - node
+      - react
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - '80:80'
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"

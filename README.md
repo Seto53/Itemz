@@ -70,12 +70,18 @@ The pdf version of this project outline can be found [HERE](https://github.com/p
 ```
 
 ### Set UP
-To view the mockups it is necessary to run a http server.
+IT IS ABSOLUTLY NECESSARY TO HAVE ACCESS TO THE .env AND .env.prod FILES TO RUN THE APPLICATION.
+#### Development
+1) Have Node.js and NPM installed in your system.
+2) Run npm install in /backend and in /frontend.
+3) Run 'docker-compose up -d'
+4) To run the Backend enter the /backend directory and run 'node main.js'.
+5) To run the Frontend enter the /frontend directory and run 'npm start'.
 
-1) Have Node.js installed in your system.
-2) In CMD, run the command npm install http-server -g
-3) Navigate to the specific path of your file folder (/docs) in CMD and run the command http-server
-4) Go to your browser and type localhost:8080.
+#### Production
+Run 'docker-compose -f production.yml up'
+
+Accessing http://localhost will show you the latest version of the app.
 
 ### Design System
 
@@ -95,3 +101,6 @@ All our images are located in [/docs/assets](https://github.com/professor-forwar
 There are some default images that would be inputted for particular collectibles as well as official images like the logo.
 
 We are using Font Awesome icon family.
+
+## Deliverable 3
+To access every detail on the updates for this deliverable [click here](./Deliverable3.md)

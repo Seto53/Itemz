@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    container_name: itemz-db
+    image: postgres
+    restart: always
+    env_file:
+      - backend/.env
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: itemz-db
+
+  pgadmin:
+    container_name: pdadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@root.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+
+
